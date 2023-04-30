@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\File;
+
+use Illuminate\Support\Facades\Storage;
 
 class FileController extends Controller
 {
@@ -28,7 +31,15 @@ class FileController extends Controller
     public function store(Request $request)
     {
         
-       return $request->file('file')->store('');
+       $imagenes= $request->file('file')->store('public');
+       $url = Storage::url($imagenes);
+      
+
+       File::create([
+        'url'=>$url]
+       );
+
+       return $url;
     }
 
     /**
