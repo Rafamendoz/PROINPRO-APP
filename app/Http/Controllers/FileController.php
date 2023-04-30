@@ -30,9 +30,16 @@ class FileController extends Controller
      */
     public function store(Request $request)
     {
+
+        return response()->json($request->name);
+
+      /*  if(!file_exists(public_path().'/storage/'.$request->name)){
+            mkdir(public_path().'/storage/'.$request->file->name, 0777,false);
+        }else{
         
-       $imagenes= $request->file('file')->store('public');
+       $imagenes=$request->name.'.'.$request->file->extension(); 
        $url = Storage::url($imagenes);
+       $request->file->move(public_path('storage'), $imagenes);
       
 
        File::create([
@@ -40,6 +47,7 @@ class FileController extends Controller
        );
 
        return $url;
+        }*/
     }
 
     /**
