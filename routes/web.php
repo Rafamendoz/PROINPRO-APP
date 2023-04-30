@@ -21,3 +21,4 @@ Route::get('/', function () {
 
 /*Route::get('/', 'App\Http\Controllers\DropzoneController@store')->name('dropzone.store');*/
 
+Route::resource('/admin/files','App\Http\Controllers\FileController');

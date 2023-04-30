@@ -436,7 +436,13 @@
     <script src="{{ asset('build/js/demo/datatables-demo.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.js"></script>
 
-
+    <script>
+        Dropzone.options.myAwesomeDropZone =   {
+            headers:{
+                'X-CSRF-TOKEN':"{{csrf_token()}}"
+            },
+        }
+    </script>
 </body>
 
 </html>
