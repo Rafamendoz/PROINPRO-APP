@@ -383,8 +383,72 @@
   <!-- Core plugin JavaScript-->
   <script src="{{ asset('build/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
 
-  <!-- Custom scripts for all pages-->
-  <script src="{{ asset('build/js/sb-admin-2.min.js')}}"></script>
+    <script>
+
+        Dropzone.options.myAwesomeDropZone =   {
+            headers:{
+                'X-CSRF-TOKEN':"{{csrf_token()}}"
+            },
+            dictDefaultMessage: "Arrastre los archivos para subirlos"
+        }
+        let arrImages = [];
+Dropzone.autoDiscover = false;  
+let myDropzone = new Dropzone(
+    '.dropzone',{
+        url:'admin/files',
+        maxFilesize:20,
+        maxFiles:20,
+        acceptedFiles:'image/jpeg, image/png',
+        addRemoveLinks: true,
+        dictRemoveFile:'Quitar'
+
+    }
+)
+
+myDropzone.on('addedfile', file=>{
+ arrImages.push(file);
+ //console.log(file);
+})
+
+myDropzone.on('removedfile', file=>{
+    let i = arrImages.indexOf(file);
+    arrImages.splice(i,1);
+    console.log(file);
+})
+
+
+function init(){
+    $("#producto_form").on("submit", function(e){
+        guardaryeditar(e);
+    });
+}
+
+
+function  guardaryeditar(e){
+    e.preventDefault();
+    var formData = new FormData($("#producto_form")[0]);   
+    var totalfiles = arrImages.length;
+    for(var i = 0; i<totalfiles; i++){
+        formData.append("file[]",arrImages[i]);
+    }
+    $.ajax({
+        url: "admin/files",
+        type:"POST",
+        data: formData,
+        contentType:false,
+        processData: false,
+        success: function(data){
+            console.log(data);
+            $('#prod_nom').val('');
+            Dropzone.forElement('.dropzone').removeAllFiles(true);
+        }
+    });
+}
+
+init();
+
+      
+    </script>
 
   <!-- Page level plugins -->
   <script src="{{ asset('build/vendor/datatables/jquery.dataTables.min.js')}}"></script>

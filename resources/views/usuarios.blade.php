@@ -20,21 +20,23 @@
                         </div>
 
                         <div class="card-body">
-                            <form action="{{route('files.store')}}" method="POST" enctype="multipart/form-data" >
-                                    @csrf
-                                    <div class="form-group">
-                                    
-                                    <input type="file" name="file">
-                                    @error('file')
-                                        <small class="text-danger">{{$message}}</small>
-                                    @enderror
-                                    <button type="submit" class="btn-primary">Subir Imagen</button>
+                            <form id="producto_form" action="{{route('files.store')}}" method="POST" enctype="multipart/form-data">
+                              
+                                <div class="form-group">
+                                    <div class="dropzone">
+                                        <div class="dz-default dz-message">
+                                            <button class="dz-button" type="button">
+                                                </button>
+                                        </div>
                                     </div>
+                                </div>
+                                <br/>
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+
+                            </form>
+
                             
-
-
-
-                            </form>   
+                          
                    
                         </div>
 
