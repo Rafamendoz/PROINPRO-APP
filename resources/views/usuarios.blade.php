@@ -38,8 +38,8 @@
                    
                         </div>
 
-                        <form action="{{route('files.store')}}"  method="POST" class="dropzone" id="my-awesome-dropzone">
-                                
+                        <form action="{{route('files.store')}}"  method="POST" class="dropzone" id="myAwesomeDropZone">
+
                         </form>
 
 
