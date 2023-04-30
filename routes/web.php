@@ -15,7 +15,7 @@ use App\Http\Controllers;
 |
 */
 
-Route::get('/', function () {
+Route::get('/admin', function () {
     return view('usuarios');
 });
 
