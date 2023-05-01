@@ -63,7 +63,9 @@ class FileController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $archivos = Files::all();
+        
+        return view('archivos',compact('archivos'));
     }
 
     /**

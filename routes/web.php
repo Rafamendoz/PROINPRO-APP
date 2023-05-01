@@ -16,7 +16,7 @@ use App\Http\Controllers;
 */
 
 Route::get('/admin', function () {
-    return view('usuarios');
+    return view('uploadfiles');
 });
 
 /*Route::get('/', 'App\Http\Controllers\DropzoneController@store')->name('dropzone.store');*/
