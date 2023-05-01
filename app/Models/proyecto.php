@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Proyecto extends Model
 {
     public $timestamps = true;
-    protected $fillable = ['id', 'nombre_proyect','estado'];
+    protected $fillable = ['id', 'nombre_proyecto','estado'];
 }

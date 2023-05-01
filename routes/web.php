@@ -26,3 +26,8 @@ Route::resource('/admin/files','App\Http\Controllers\FileController');
 Route::get("/test", function (){
     return view('test');
 });
+
+
+Route::get("/", function (){
+    return view('index');
+});
