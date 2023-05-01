@@ -22,6 +22,15 @@
       <div class="card my-5 p-3">
         <form method="POST" action="#">
           <div class="mb-3">
+            <label class="form-label" for="inputUser">Nombre</label>
+            <input type="text" class="form-control" placeholder="Usuario id=" inputName" name="inputName" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="inputUser">Apellido</label>
+            <input type="text" class="form-control" placeholder="Usuario id=" inputApellido" name="inputApellido"
+              required>
+          </div>
+          <div class="mb-3">
             <label class="form-label" for="inputUser">User</label>
             <input type="text" class="form-control" placeholder="Usuario id=" inputUser" name="inputUser" required>
           </div>
