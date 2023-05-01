@@ -355,7 +355,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Faith Hope 2023</span>
+            <span>Copyright &copy; PROINPRO 2023 V.1.0</span>
           </div>
         </div>
       </footer>

@@ -18,13 +18,24 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//RUTAS PARA LA ENTIDAD PROYECTO
 
-Route::post('/proyectoR/add', 'App\Http\Controllers\ProyectoController@setProyectoRest');
-Route::get('/proyectoR/', 'App\Http\Controllers\ProyectoController@getProyectosRest');
+Route::post('/proyectoR/add', 'App\Http\Controllers\ProyectoController@setProyecto');
+Route::get('/proyectosR/', 'App\Http\Controllers\ProyectoController@getProyectosRest');
 Route::put('/proyectoR/update/{id}', 'App\Http\Controllers\ProyectoController@putProyecto');
-Route::get('/proyectos/', 'App\Http\Controllers\ProyectoController@getProyectos');
+Route::get('/proyectoR/{id}', 'App\Http\Controllers\ProyectoController@getProyectoRestById');
 
 
+
+//RUTAS PARA LA ENTIDAD USUARIO
 
 Route::get('/usuarioR/', 'App\Http\Controllers\UsuarioController@getUsuariosRest');
 Route::get('/usuario/', 'App\Http\Controllers\UsuarioController@getUsuarios');
+
+
+//RUTAS PARA LA ENTIDAD ESTADO
+Route::get('/estadosR/', 'App\Http\Controllers\EstadoController@getEstadosRest');
+Route::get('/estadoR/{id}', 'App\Http\Controllers\EstadoController@getEstadoRestById');
+Route::post('estadoR/add', 'App\Http\Controllers\EstadoController@setEstado');
+Route::put('estadoR/update/{id}', 'App\Http\Controllers\EstadoController@putEstado');
+Route::delete('estadoR/delete/{id}', 'App\Http\Controllers\EstadoController@deleteEstado');

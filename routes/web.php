@@ -57,11 +57,10 @@ Route::get('/token', function (Request $request) {
     // ...
 });
 
-Route::get('/proyecto/{id}', 'App\Http\Controllers\ProyectoController@getProyectoRestById');
-Route::post('/proyectoR/add', 'App\Http\Controllers\ProyectoController@setProyectoRest');
-Route::get('/proyectoR/', 'App\Http\Controllers\ProyectoController@getProyectosRest');
-Route::put('/proyectoR/update/{id}', 'App\Http\Controllers\ProyectoController@putProyecto');
-Route::get('/proyectos/', 'App\Http\Controllers\ProyectoController@getProyectos');
+//RUTAS PARA LA ENTIDAD PROYECTO
+Route::get('proyectos/{id}', 'App\Http\Controllers\ProyectoController@getProyectoById');
+Route::get('proyectosR/', 'App\Http\Controllers\ProyectoController@getProyectosRest');
+Route::get('proyectos/', 'App\Http\Controllers\ProyectoController@getProyectos');
 
 
 
@@ -69,3 +68,7 @@ Route::get('/usuarioR/', 'App\Http\Controllers\UsuarioController@getUsuariosRest
 Route::get('/usuario/', 'App\Http\Controllers\UsuarioController@getUsuarios');
 Route::get('/download/{id}/{filename}', 'App\Http\Controllers\FileController@download');
 Route::get('/delete/{id}/{filename}', 'App\Http\Controllers\FileController@destroy');
+
+
+
+
