@@ -36,4 +36,6 @@ Route::get("/", function (){
 Route::get("/insert", function (){
     return view('insertUsuario');
 });
-
+Route::get("/list", function (){
+    return view('listarUsuario');
+});
