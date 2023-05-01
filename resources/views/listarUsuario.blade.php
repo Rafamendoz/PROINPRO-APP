@@ -23,7 +23,6 @@
         <table class="table table-bordered " id="dataTable" width="100%" cellspacing="0">
           <thead class="text-center">
             <tr>
-              <th>Nombre</th>
               <th>Usuario</th>
               <th>Email</th>
               <th>Intentos</th>
@@ -41,7 +40,6 @@
             @foreach ($usuarios as $user)
             <tr>
               <td>{{ $user->name }}</td>
-              <td>{{$user->user }}</td>
               <td>{{$user->email }}</td>
               <td>{{$user->intentos}}</td>
               <td>{{$user->email_verified_at }}</td>
