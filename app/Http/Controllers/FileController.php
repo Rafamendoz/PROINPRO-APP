@@ -31,7 +31,7 @@ class FileController extends Controller
     public function store(Request $request)
     {
 
-        return response()->json($request->name);
+        return response()->json($request->all());
 
       /*  if(!file_exists(public_path().'/storage/'.$request->name)){
             mkdir(public_path().'/storage/'.$request->file->name, 0777,false);

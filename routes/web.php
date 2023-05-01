@@ -22,3 +22,7 @@ Route::get('/admin', function () {
 /*Route::get('/', 'App\Http\Controllers\DropzoneController@store')->name('dropzone.store');*/
 
 Route::resource('/admin/files','App\Http\Controllers\FileController');
+
+Route::get("/test", function (){
+    return view('test');
+});

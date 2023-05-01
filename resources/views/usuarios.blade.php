@@ -20,27 +20,26 @@
                         </div>
 
                         <div class="card-body">
-                            <form id="producto_form" action="{{route('files.store')}}" method="POST" enctype="multipart/form-data">
-                              
-                                <div class="form-group">
-                                    <div class="dropzone">
-                                        <div class="dz-default dz-message">
-                                            <button class="dz-button" type="button">
-                                                </button>
-                                        </div>
+                            <form action="{{route('files.store')}}" method="POST" enctype="multipart/form-data" >
+                                    @csrf
+                                    <div class="form-group">
+                                    
+                                    <input type="file" name="file" id="file">
+                                    <input type="text" name="namefile" id="namefile" value="d">
+                                    @error('file')
+                                        <small class="text-danger">{{$message}}</small>
+                                    @enderror
+                                    <button type="submit" class="btn-primary">Subir Imagen</button>
                                     </div>
-                                </div>
-                                <br/>
-                                <button type="submit" class="btn btn-primary">Guardar</button>
-
-                            </form>
-
                             
-                          
+
+
+
+                            </form>   
                    
                         </div>
 
-                        <form action="{{route('files.store')}}"  method="POST" class="dropzone" id="myAwesomeDropZone">
+                        <form action="{{route('files.store')}}"  method="POST" class="dropzone" id="my-awesome-dropzone">
 
                         </form>
 
