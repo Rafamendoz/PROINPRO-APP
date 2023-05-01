@@ -60,7 +60,7 @@
                         <label class="custom-control-label" for="customCheck">Recordarme</label>
                       </div>
                     </div>
-                    <a onclick="loggin();" class="btn btn-primary btn-user btn-block">
+                    <a onclick="loggin();" class="btn btn-turquesa btn-user btn-block">
                       Login
                     </a>
                     <hr>
