@@ -31,29 +31,33 @@ class FileController extends Controller
     public function store(Request $request)
 
     {
-        return response()->json("AGREGADO");
-
+        
+        $nombreproyecto = $request->nombre_proyecto;
         $nombreArchivo = $request->file->getClientOriginalName();
-        $rutaDirectorio = public_path('storage').'\\'.$nombreArchivo;
+        $rutaDirectorio = public_path('storage').'\\'.$nombreproyecto;
         if(!file_exists($rutaDirectorio)){
                 mkdir($rutaDirectorio,0777,false);
         }
 
 
-       $url = Storage::url($nombreArchivo);
+       $url = Storage::url($nombreproyecto);
        if(file_exists($rutaDirectorio.'\\'.$nombreArchivo)){
         $request->file->move($rutaDirectorio, $request->file->getClientOriginalName());
         return response()->json("ACTUALIZADO");
        }else{
-        $request->file->move($rutaDirectorio, $request->file->getClientOriginalName());
       
         Files::create([
+        'id_proyecto'=>$request->id_proyecto,
+        'file_name'=>$nombreArchivo,
          'url'=>$url]
         );
+        $request->file->move($rutaDirectorio, $request->file->getClientOriginalName());
+        return response()->json("AGREGADO");
+
+
  
        }
 
-       return response()->json("AGREGADO");
       
        
     }

@@ -33,7 +33,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">{{$file->nombre_proyecto}}</h5>
                                     <p class="card-text">{{$file->descripcion}}</p>
-                                    <a href="proyecto/{{$file->id}}" class="btn btn-primary">Ver Archivos</a>
+                                    <a href="/proyecto/{{$file->id}}" class="btn btn-primary">Ver Archivos</a>
                                 </div>
                      
                             

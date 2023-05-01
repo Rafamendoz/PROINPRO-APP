@@ -16,16 +16,21 @@ class ProyectoController extends Controller
 
     public function getProyectosRest(Request $request){
         $proyectos = Proyecto::all();
-        return response()->json(["Proyecto"=>$proyectos, "Estado"=>"Existoso"]);
+        $token = $request->session()->token();
+        $token = csrf_token();
+        $test = ["Proyecto"=>$proyectos, "Estado"=>$token];
+        return response()->json(["Proyecto"=>$test, "Estado"=>"Existoso"]);
     }
 
     public function getProyectos(Request $request){
         $proyectos = Proyecto::all();
+        
         return view('proyectos', compact('proyectos'));
     }
 
     public function getProyectoRestById($id){
         $proyecto = Proyecto::find($id);
+   
         
         return view('uploadfiles', compact('proyecto'));
     }
