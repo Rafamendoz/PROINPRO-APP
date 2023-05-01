@@ -2,7 +2,7 @@
 
 
 @section('tablabase')
-<form id="producto_form" method="POST">
+<form id="producto_form" method="POST" action="{{route('files.store')}}">
 
 
 
@@ -11,12 +11,9 @@
                     <input type="text" class="form-control" name="prod_nom" id="prod_nom" placeholder="Ingrese el nombre del producto" required>
                 </div>
                 <div class="form-group">
-                    <div class="dropzone">
-                        <div class="dz-default dz-message">
-                            <button class="dz-button" type="button">
-                                </button>
-                        </div>
-                    </div>
+                   <form action="{{route('files.store')}}" method="post" class="dropzone">
+
+                   </form>
                 </div>
                 <br/>
                 <button type="submit" class="btn btn-primary">Guardar</button>
@@ -27,7 +24,6 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-            <script src="{{ asset('build/js/mtnproducto.js')}}"></script>
-
+           
 
 @endsection

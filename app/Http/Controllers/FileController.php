@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\File;
+use App\Models\Files;
 
 use Illuminate\Support\Facades\Storage;
 
@@ -30,24 +30,32 @@ class FileController extends Controller
      */
     public function store(Request $request)
     {
+        $nombreArchivo = $request->file->getClientOriginalName();
+        $rutaDirectorio = public_path('storage').'\\'.$nombreArchivo;
+      if(!file_exists($rutaDirectorio)){
+            mkdir($rutaDirectorio,0777,false);
+       }
 
-        return response()->json($request->all());
-
-      /*  if(!file_exists(public_path().'/storage/'.$request->name)){
-            mkdir(public_path().'/storage/'.$request->file->name, 0777,false);
-        }else{
+      
+       
         
-       $imagenes=$request->name.'.'.$request->file->extension(); 
-       $url = Storage::url($imagenes);
-       $request->file->move(public_path('storage'), $imagenes);
+
+       $url = Storage::url($nombreArchivo);
+       if(file_exists($rutaDirectorio.'\\'.$nombreArchivo)){
+        $request->file->move($rutaDirectorio, $request->file->getClientOriginalName());
+        return response()->json("ACTUALIZADO");
+       }else{
+        $request->file->move($rutaDirectorio, $request->file->getClientOriginalName());
       
 
-       File::create([
-        'url'=>$url]
-       );
-
-       return $url;
-        }*/
+        Files::create([
+         'url'=>$url]
+        );
+ 
+       }
+       return response()->json("AGREGADO");
+      
+       
     }
 
     /**
@@ -55,7 +63,9 @@ class FileController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $archivos = Files::all();
+        
+        return view('archivos',compact('archivos'));
     }
 
     /**
