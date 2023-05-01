@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Files extends Model
+class proyecto extends Model
 {
     public $timestamps = true;
-    protected $fillable = ['id', 'id_proyecto','file_name','url'];
+    protected $fillable = ['id', 'nombre_proyect','estado'];
 }

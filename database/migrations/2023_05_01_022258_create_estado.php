@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('files', function (Blueprint $table) {
+        Schema::create('estado', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_proyecto');
-            $table->string('file_name');
-            $table->string('url');
+            $table->string('valor_estado');
             $table->timestamps();
         });
     }
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('files');
+        Schema::dropIfExists('estado');
     }
 };
