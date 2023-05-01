@@ -20,6 +20,7 @@
   <!-- Custom styles for this template-->
   <link href="{{ asset('build/css/sb-admin-2.min.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.css">
+  <link href="{{ asset('build/css/app.css') }}" rel="stylesheet">
 
 </head>
 
@@ -29,14 +30,14 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
+          <i class="fas fa-toolbox"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">FHOPE <sup>ADMIN</sup></div>
+        <div class="sidebar-brand-text mx-3">PROINPRO</div>
       </a>
 
       <!-- Divider -->
@@ -62,15 +63,14 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
           aria-controls="collapseTwo">
           <i class="fas fa-fw fa-shopping-bag"></i>
-          <span>Pr</span>
+          <span>Proyectos</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Custom Components:</h6>
-            <a class="collapse-item" href="buttons.html">Resumen Ventas</a>
-            <a class="collapse-item" href="cards.html">POS</a>
-            <a class="collapse-item" href="cards.html">Clientes</a>
-            <a class="collapse-item" href="cards.html">Productos</a>
+            <a class="collapse-item" href="buttons.html"> Crear Proyectos</a>
+            <a class="collapse-item" href="buttons.html"> Ver Proyectos</a>
+
 
           </div>
         </div>
@@ -80,13 +80,29 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
           aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-money-bill"></i>
-          <span>Finanzas</span>
+          <i class="fas fa-user-hard-hat"></i>
+          <span>Usuarios</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Custom Utilities:</h6>
-            <a class="collapse-item" href="utilities-color.html">Bancos</a>
+            <a class="collapse-item" href="utilities-color.html">Usuarios</a>
+            <a class="collapse-item" href="utilities-color.html">Nuevos Usuarios</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Nav Item - Utilities Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+          aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas "></i>
+          <span>Token</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Custom Utilities:</h6>
+            <a class="collapse-item" href="utilities-color.html">Generar Token</a>
           </div>
         </div>
       </li>
@@ -100,15 +116,10 @@
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Tablas Dependientes:</h6>
-            <a class="collapse-item" href="login.html">Usuarios</a>
-            <a class="collapse-item" href="register.html">Colaboradores</a>
 
             <h6 class="collapse-header">Tablas Independientes</h6>
-            <a class="collapse-item" href="forgot-password.html">Puestos</a>
-            <a class="collapse-item" href="404.html">Tipo Cuentas Bancarias</a>
-            <a class="collapse-item" href="blank.html">Tipo Monedas</a>
-            <a class="collapse-item" href="blank.html">Tipo Transaccion</a>
+            <a class="collapse-item" href="forgot-password.html">Estados</a>
+
           </div>
         </div>
       </li>
@@ -123,19 +134,6 @@
 
 
 
-      <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span></a>
-      </li>
-
-      <!-- Nav Item - Tables -->
-      <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
-      </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
@@ -146,10 +144,7 @@
       </div>
 
       <!-- Sidebar Message -->
-      <div class="sidebar-card d-none d-lg-flex">
-        <img class="sidebar-card-illustration mb-2" src="{{ asset('build/img/undraw_rocket.svg')}}" alt="...">
-        <p class="text-center mb-2"><strong>GEVEC SYSTEM</strong> es el sistema de gestion de recursos de la empresa</p>
-      </div>
+
 
     </ul>
     <!-- End of Sidebar -->
