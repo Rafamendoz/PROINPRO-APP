@@ -23,24 +23,30 @@
         <table class="table table-bordered " id="dataTable" width="100%" cellspacing="0">
           <thead class="text-center">
             <tr>
-              <th>Email</th>
+              <th>Nombre</th>
               <th>Usuario</th>
-              <th>Password</th>
+              <th>Email</th>
               <th>Intentos</th>
-              <th>Estado</th>
+              <th>Verificado</th>
+              <th>Password</th>
+              <th>Token</th>
+              <th>Creado</th>
+              <th>Actualizado</th>
               <th>Acciones</th>
 
             </tr>
           </thead>
 
           <tbody class="text-center">
-            @foreach ($data as $user)
+            @foreach ($usuarios as $user)
             <tr>
-              <td>{{ $user->email }}</td>
+              <td>{{ $user->name }}</td>
               <td>{{$user->user }}</td>
-              <td>{{$user->password }}</td>
+              <td>{{$user->email }}</td>
               <td>{{$user->intentos}}</td>
-              <td>{{$user->estado }}</td>
+              <td>{{$user->email_verified_at }}</td>
+              <td>{{$user->password }}</td>
+              <td>{{$user->remember_token }}</td>
               <td>{{$user->created_at }}</td>
               <td>{{$user->updated_at }}</td>
               <td>

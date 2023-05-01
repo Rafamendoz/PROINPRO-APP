@@ -14,6 +14,6 @@ class UsuarioController extends Controller
 
     public function getUsuarios(Request $request){
         $usuarios = User::all();
-        return view('insertUsuario', compact('usuarios'));
+        return view('listarUsuario', compact('usuarios'));
     }
 }
