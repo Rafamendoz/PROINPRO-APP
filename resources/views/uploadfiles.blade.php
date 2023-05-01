@@ -23,13 +23,14 @@
             aria-label="Search" aria-describedby="basic-addon2">
           <div class="input-group-append">
             <button class="btn btn-color" type="button">
-              <i class="fas fa-search fa-sm " style="color:#f4f9fa;"></i>
+              <i class="fas fa-search fa-sm " style="color:blanchedalmond"></i>
             </button>
           </div>
         </div>
       </form>
       <h7 class=" font-weight-bold text-info">Add</h6>
-        <button class="btn btn-color btn-md" type="button"><i class="fas fa-plus" style="color:#f4f9fa;"></i></button>
+        <button class="btn btn-color btn-md" type="button"><i class="fas fa-plus "
+            style="color:blanchedalmond"></i></button>
     </div>
   </div>
   <div class="container ">
@@ -52,8 +53,7 @@
             <td></td>
             <td> </td>
             <td> </td>
-            <td style="color:#02c6dc;"><i class="fa fa-edit" aria-hidden="true"> <br></i> <i
-                class="fas fa-trash-alt"></i></td>
+            <td><i class="fa fa-edit" aria-hidden="true"> <br></i> <i class="fas fa-trash-alt"></i></td>
 
           </tr>
 
@@ -63,7 +63,26 @@
 
   </div>
 
+  <div class="card-body">
+    <form action="{{route('files.store')}}" method="POST" enctype="multipart/form-data">
+      @csrf
+      <div class="form-group">
 
+        <input type="file" name="file" id="file">
+        <input type="text" name="Proyecto" value="PROYECTOTEST" hidden>
+
+        @error('file')
+        <small class="text-danger">{{$message}}</small>
+        @enderror
+        <button type="submit" class="btn-primary">Subir Imagen</button>
+      </div>
+
+
+
+
+    </form>
+
+  </div>
 
 
 

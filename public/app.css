@@ -1,0 +1,10 @@
+
+/*/color de side bar*/
+#accordionSidebar{
+  background: #02c6dc;
+  background: linear-gradient(0deg,  rgba(28,22,205,1) 9, rgba(28,22,205,1) 9%);
+}
+
+.btn-color{
+  background: #02c6dc;
+}

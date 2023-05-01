@@ -20,7 +20,7 @@
   <!-- Custom styles for this template-->
   <link href="{{ asset('build/css/sb-admin-2.min.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.css">
-  <link href="{{ asset('build/css/app.css') }}" rel="stylesheet">
+  <link href="{{ asset('app.css') }}" rel="stylesheet">
 
 </head>
 
