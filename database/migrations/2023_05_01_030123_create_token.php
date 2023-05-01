@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('estado', function (Blueprint $table) {
+        Schema::create('token', function (Blueprint $table) {
             $table->id();
-            $table->string('valor_estado'   );
+            $table->unsignedBigInteger('id_usuario');
+            $table->string('token');
             $table->timestamps();
         });
     }
@@ -23,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('estado');
+        Schema::dropIfExists('token');
     }
 };
