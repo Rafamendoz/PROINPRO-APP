@@ -67,7 +67,7 @@ class FileController extends Controller
      */
     public function show(string $id)
     {
-        $archivos = Files::all();
+        $archivos = Files::all()->where('id_proyecto',$id);
         
         return view('archivos',compact('archivos'));
     }
@@ -95,4 +95,16 @@ class FileController extends Controller
     {
         //
     }
+
+
+    public function download($id, $filename)
+    {
+       $a = Files::where('id_proyecto',$id)->where('file_name', $filename)->get();
+      $path = public_path().$a[0]['url']."\\". $a[0]['file_name'];
+       return response()->download($path);
+    
+      
+
+    }
+
 }

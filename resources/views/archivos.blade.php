@@ -43,7 +43,7 @@
             <td>{{$file->updated_at }}</td>
             <td>
               <button class="btn btn-danger btn-sm" type="button"><i class="fas fa-trash"></i></button>
-              <button class="btn btn-primary btn-sm" type="button"><i class="fas fa-save"></i></button>
+              <button class="btn btn-primary btn-sm" type="button" onclick="window.location='../../download/{{ $file->id_proyecto }}/{{ $file->file_name }}'"><i class="fas fa-download"></i></button>
 
 
 
@@ -57,6 +57,11 @@
   </div>
 </div>
 
+<script>
+    function descargar(){
+        route("/download/{id}/{filename}")
+    }
+</script>
 
 
 @endsection
