@@ -13,4 +13,9 @@ class ProyectoController extends Controller
 
 
     }
+
+    public function getProyectosRest(Request $request){
+        $proyectos = Proyecto::all();
+        return response()->json(["Proyecto"=>$proyectos, "Estado"=>"Existoso"]);
+    }
 }

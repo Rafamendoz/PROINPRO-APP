@@ -19,4 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::post('/proyectoR', 'App\Http\Controllers\ProyectoController@setProyectoRest');
+Route::post('/proyectoR/add', 'App\Http\Controllers\ProyectoController@setProyectoRest');
+Route::get('/proyectoR/', 'App\Http\Controllers\ProyectoController@getProyectosRest');

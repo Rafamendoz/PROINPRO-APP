@@ -31,3 +31,9 @@ Route::get("/test", function (){
 Route::get("/", function (){
     return view('index');
 });
+
+
+Route::get("/insert", function (){
+    return view('insertUsuario');
+});
+
