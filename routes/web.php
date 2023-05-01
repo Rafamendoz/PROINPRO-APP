@@ -68,4 +68,4 @@ Route::get('/proyectos/', 'App\Http\Controllers\ProyectoController@getProyectos'
 Route::get('/usuarioR/', 'App\Http\Controllers\UsuarioController@getUsuariosRest');
 Route::get('/usuario/', 'App\Http\Controllers\UsuarioController@getUsuarios');
 Route::get('/download/{id}/{filename}', 'App\Http\Controllers\FileController@download');
-
+Route::get('/delete/{id}/{filename}', 'App\Http\Controllers\FileController@destroy');

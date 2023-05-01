@@ -23,6 +23,7 @@
         <thead class="text-center">
           <tr>
             <th>Id</th>
+            <th>Nombre del Archivo</th>
             <th>URL</th>
 
             <th>CREACION</th>
@@ -37,12 +38,13 @@
           @foreach ($archivos as $file)
           <tr>
             <td>{{ $file->id }}</td>
-            <td>{{ $file->url }}</td>
+            <td>{{ $file->file_name }}</td>
+            <td>/public{{ $file->url }}</td>
 
             <td>{{$file->created_at }}</td>
             <td>{{$file->updated_at }}</td>
             <td>
-              <button class="btn btn-danger btn-sm" type="button"><i class="fas fa-trash"></i></button>
+              <button class="btn btn-danger btn-sm" type="button" onclick="window.location='../../delete/{{ $file->id_proyecto }}/{{ $file->file_name }}'"><i class="fas fa-trash"></i></button>
               <button class="btn btn-primary btn-sm" type="button" onclick="window.location='../../download/{{ $file->id_proyecto }}/{{ $file->file_name }}'"><i class="fas fa-download"></i></button>
 
 

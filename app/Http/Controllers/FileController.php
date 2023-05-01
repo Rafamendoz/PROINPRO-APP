@@ -91,9 +91,16 @@ class FileController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
-    {
-        //
+    public function destroy($id, $filename)
+
+    { 
+        $a = Files::where('id_proyecto',$id)->where('file_name', $filename)->get();
+        $path = public_path().$a[0]['url']."\\". $a[0]['file_name'];
+        unlink($path);
+       $delete = Files::where('id_proyecto',$id)->where('file_name', $filename)->delete();
+        return redirect('admin/files/'.$id);
+
+     
     }
 
 
