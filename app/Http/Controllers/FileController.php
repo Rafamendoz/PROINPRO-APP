@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\File;
+use App\Models\Files;
 
 use Illuminate\Support\Facades\Storage;
 
@@ -30,24 +30,18 @@ class FileController extends Controller
      */
     public function store(Request $request)
     {
-
-        return response()->json($request->all());
-
-      /*  if(!file_exists(public_path().'/storage/'.$request->name)){
-            mkdir(public_path().'/storage/'.$request->file->name, 0777,false);
-        }else{
+       if()
         
-       $imagenes=$request->name.'.'.$request->file->extension(); 
-       $url = Storage::url($imagenes);
-       $request->file->move(public_path('storage'), $imagenes);
+       $imagenes= time().'.'.$request->file->getClientOriginalName(); 
+       $url = Storage::url($request->file->getClientOriginalName());
+       $request->file->move(public_path('storage'), $request->file->getClientOriginalName());
       
 
-       File::create([
+       Files::create([
         'url'=>$url]
        );
 
        return $url;
-        }*/
     }
 
     /**

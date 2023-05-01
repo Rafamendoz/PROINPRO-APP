@@ -25,7 +25,8 @@
                                     <div class="form-group">
                                     
                                     <input type="file" name="file" id="file">
-                                    <input type="text" name="namefile" id="namefile" value="d">
+                                    <input type="text" name="Proyecto" value="PROYECTOTEST" hidden>
+
                                     @error('file')
                                         <small class="text-danger">{{$message}}</small>
                                     @enderror
@@ -38,10 +39,6 @@
                             </form>   
                    
                         </div>
-
-                        <form action="{{route('files.store')}}"  method="POST" class="dropzone" id="my-awesome-dropzone">
-
-                        </form>
 
 
 
