@@ -32,7 +32,7 @@
         <div class="col-md-6 p-4">
             <div class="form-group"> 
               <label for="">Proyecto:</label>
-              <label for=""><b>Construccion de Carretera Salida Al Sur</b></label>
+              <label for=""><b>{{$proyecto->nombre_proyecto}}</b></label>
             </div>
 
             <div class="form-group"> 
@@ -41,21 +41,14 @@
             </div>
             <br>
             <br>
-            <form action="{{route('files.store')}}" method="POST" enctype="multipart/form-data">
+            <form action="" method="POST" enctype="multipart/form-data">
                   @csrf
                   <div class="form-group">
-
                     <input type="file" name="file" id="file">
-                    <input type="text" name="Proyecto" value="PROYECTOTEST" hidden>
-
-                    @error('file')
-                    <small class="text-danger">{{$message}}</small>
-                    @enderror
+                    <input type="text" name="Proyecto" value="{{ csrf_token() }}"  >
                   </div>
-                  <button type="submit" class="btn btn-primary">Subir Archivo</button>
-
+                  <button type="button" onclick="test()" class="btn btn-primary">Subir Archivo</button>
                 
-
       
             </form>
 
@@ -70,6 +63,31 @@
  
 </div>
 
+<script>
+   function test(){
+    let valores = document.getElementById('file').value
+  alert(valores);
+
+  $.ajax({
+                headers: {
+                  'X-CSRF-TOKEN': "{{csrf_token()}}"
+                },
+                file:  valores, //datos que se envian a traves de ajax
+                url:   '{{route('files.store')}}', //archivo que recibe la peticion
+                type:  'post', //método de envio
+                beforeSend: function () {
+                        $("#resultado").html("Procesando, espere por favor...");
+                },
+                success:  function (response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
+                        $("#resultado").html(response);
+                }
+        });
+  }
+ 
+
+
+
+</script>
 
 
 @endsection

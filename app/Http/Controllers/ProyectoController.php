@@ -18,4 +18,22 @@ class ProyectoController extends Controller
         $proyectos = Proyecto::all();
         return response()->json(["Proyecto"=>$proyectos, "Estado"=>"Existoso"]);
     }
+
+    public function getProyectos(Request $request){
+        $proyectos = Proyecto::all();
+        return view('proyectos', compact('proyectos'));
+    }
+
+    public function getProyectoRestById($id){
+        $proyecto = Proyecto::find($id);
+        
+        return view('uploadfiles', compact('proyecto'));
+    }
+
+    public function putProyecto(Request $request, $id){
+        $proyecto = Proyecto::find($id);
+        $proyecto->update($request->all());
+        return response()->json(["Proyecto"=>$proyecto, "Estado"=>"Existoso", "Descripcion"=>"Registro Modificado"]);
+
+    }
 }

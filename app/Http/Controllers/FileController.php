@@ -29,16 +29,16 @@ class FileController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
+
     {
+        return response()->json("AGREGADO");
+
         $nombreArchivo = $request->file->getClientOriginalName();
         $rutaDirectorio = public_path('storage').'\\'.$nombreArchivo;
-      if(!file_exists($rutaDirectorio)){
-            mkdir($rutaDirectorio,0777,false);
-       }
+        if(!file_exists($rutaDirectorio)){
+                mkdir($rutaDirectorio,0777,false);
+        }
 
-      
-       
-        
 
        $url = Storage::url($nombreArchivo);
        if(file_exists($rutaDirectorio.'\\'.$nombreArchivo)){
@@ -47,12 +47,12 @@ class FileController extends Controller
        }else{
         $request->file->move($rutaDirectorio, $request->file->getClientOriginalName());
       
-
         Files::create([
          'url'=>$url]
         );
  
        }
+
        return response()->json("AGREGADO");
       
        

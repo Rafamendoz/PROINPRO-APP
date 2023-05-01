@@ -16,4 +16,10 @@ class UsuarioController extends Controller
         $usuarios = User::all();
         return view('listarUsuario', compact('usuarios'));
     }
+
+    public function putUsuario(Request $request, $id){
+        $usuario = User::find($id);
+        $usuario->update($request->all());
+
+    }
 }
