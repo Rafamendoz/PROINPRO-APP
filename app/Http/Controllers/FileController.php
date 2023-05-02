@@ -43,7 +43,7 @@ class FileController extends Controller
        $url = Storage::url($nombreproyecto);
        if(file_exists($rutaDirectorio.'\\'.$nombreArchivo)){
         $request->file->move($rutaDirectorio, $request->file->getClientOriginalName());
-        return response()->json("ACTUALIZADO");
+        return redirect('admin/files/'.$request->id_proyecto);
        }else{
       
         Files::create([
@@ -52,7 +52,7 @@ class FileController extends Controller
          'url'=>$url]
         );
         $request->file->move($rutaDirectorio, $request->file->getClientOriginalName());
-        return response()->json("AGREGADO");
+        return redirect('admin/files/'.$request->id_proyecto);
 
 
  

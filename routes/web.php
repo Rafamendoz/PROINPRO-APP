@@ -58,7 +58,7 @@ Route::get('/token', function (Request $request) {
 });
 
 //RUTAS PARA LA ENTIDAD PROYECTO
-Route::get('proyectos/{id}', 'App\Http\Controllers\ProyectoController@getProyectoById');
+Route::get('proyecto/{id}', 'App\Http\Controllers\ProyectoController@getProyectoById');
 Route::get('proyectosR/', 'App\Http\Controllers\ProyectoController@getProyectosRest');
 Route::get('proyectos/', 'App\Http\Controllers\ProyectoController@getProyectos');
 
