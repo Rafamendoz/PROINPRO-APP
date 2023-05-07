@@ -18,7 +18,7 @@ class UsuarioController extends Controller
         'user'=>$request->user,
         'email'=>$request->email,
         'password'=>Hash::make($request->password),
-        ]);
+        ])->assignRole($request->rol);;
 
      
 
