@@ -79,6 +79,8 @@
       </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
+      @role('Administrador')
+   
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
           aria-expanded="true" aria-controls="collapseUtilities">
@@ -93,7 +95,7 @@
           </div>
         </div>
       </li>
-
+      @endrole
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"

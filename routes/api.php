@@ -29,9 +29,12 @@ Route::get('/proyectoR/{id}', 'App\Http\Controllers\ProyectoController@getProyec
 
 //RUTAS PARA LA ENTIDAD USUARIO
 
-Route::post('usuario/add', 'App\Http\Controllers\UsuarioController@setUsuario');
+Route::post('usuarioR/add', 'App\Http\Controllers\UsuarioController@setUsuario');
+Route::get('usuarioR/{user}', 'App\Http\Controllers\UsuarioController@getUsuarioRestByUser');
+Route::get('usuariosR','App\Http\Controllers\UsuarioController@getUsuariosRest');
+Route::put('usuariosR/update/{user}','App\Http\Controllers\UsuarioController@putUsuario');
 
-
+Route::get('usuarioR/assing/role','App\Http\Controllers\UsuarioController@asignarRol');
 
 //RUTAS PARA LA ENTIDAD ESTADO
 Route::get('/estadosR/', 'App\Http\Controllers\EstadoController@getEstadosRest');
@@ -39,3 +42,13 @@ Route::get('/estadoR/{id}', 'App\Http\Controllers\EstadoController@getEstadoRest
 Route::post('estadoR/add', 'App\Http\Controllers\EstadoController@setEstado');
 Route::put('estadoR/update/{id}', 'App\Http\Controllers\EstadoController@putEstado');
 Route::delete('estadoR/delete/{id}', 'App\Http\Controllers\EstadoController@deleteEstado');
+
+
+
+
+//RUTAS PARA LA ENTIDAD ROL
+Route::get('/rolesR/', 'App\Http\Controllers\RolController@getRolesRest');
+Route::get('/rolesR/{id}', 'App\Http\Controllers\RolController@getEstadoRestById');
+Route::post('rolesR/add', 'App\Http\Controllers\RolController@setRol');
+Route::put('rolesR/update/{id}', 'App\Http\Controllers\RolController@putEstado');
+Route::delete('rolesR/delete/{id}', 'App\Http\Controllers\RolController@deleteEstado');

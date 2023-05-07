@@ -13,7 +13,8 @@ class LoginController extends Controller
             'password'=> $request->password
         ];
 
-        $remember = false;
+        $remember = ($request->has('remember')? true : false);
+        
         if(Auth::attempt($credenciales, $remember )){
 
             return redirect()->intended('proyectos');
