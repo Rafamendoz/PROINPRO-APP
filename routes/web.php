@@ -29,10 +29,14 @@ Route::get("/test", function (){
     return view('test');
 });
 
+Route::post('validate', 'App\Http\Controllers\LoginController@login')->name('validate');
+Route::get('logout', 'App\Http\Controllers\LoginController@logout')->name('logout');
 
-Route::get("/", function (){
+
+
+Route::get("/login", function (){
     return view('index');
-});
+})->name('login');
 
 
 Route::get("/insert", function (){
@@ -43,24 +47,14 @@ Route::get("/list", function (){
 });
 
 
-Route::get("/proyectos", function (){
-    return view('proyectos');
-});
 
-Route::get('/token', function (Request $request) {
 
-    $token = $request->session()->token();
- 
-    $token = csrf_token();
-    return $token;
- 
-    // ...
-});
 
 //RUTAS PARA LA ENTIDAD PROYECTO
+ 
 Route::get('proyecto/{id}', 'App\Http\Controllers\ProyectoController@getProyectoById');
 Route::get('proyectosR/', 'App\Http\Controllers\ProyectoController@getProyectosRest');
-Route::get('proyectos/', 'App\Http\Controllers\ProyectoController@getProyectos');
+Route::get('proyectos/', 'App\Http\Controllers\ProyectoController@getProyectos')->middleware('auth');
 
 
 

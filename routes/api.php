@@ -29,8 +29,8 @@ Route::get('/proyectoR/{id}', 'App\Http\Controllers\ProyectoController@getProyec
 
 //RUTAS PARA LA ENTIDAD USUARIO
 
-Route::get('/usuarioR/', 'App\Http\Controllers\UsuarioController@getUsuariosRest');
-Route::get('/usuario/', 'App\Http\Controllers\UsuarioController@getUsuarios');
+Route::post('usuario/add', 'App\Http\Controllers\UsuarioController@setUsuario');
+
 
 
 //RUTAS PARA LA ENTIDAD ESTADO
