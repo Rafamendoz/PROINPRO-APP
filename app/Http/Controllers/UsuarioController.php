@@ -45,6 +45,14 @@ class UsuarioController extends Controller
 
     }
 
+    public function getUsuarios(){
+        $usuarios = User::all();
+        return view('listarUsuario', compact('usuarios'));
+
+    }
+
+
+
     public function getUsuariosRest(){
         $usuarios = User::all();
         return response()->json(['Usuarios'=>$usuarios, 'Estado'=>'Exitoso', 'Descripcion'=>"Registros Encontrado"],200);

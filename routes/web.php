@@ -42,9 +42,7 @@ Route::get("/login", function (){
 Route::get("/insert", function (){
     return view('insertUsuario');
 });
-Route::get("/list", function (){
-    return view('listarUsuario');
-});
+Route::get("/list", "App\Http\Controllers\UsuarioController@getUsuarios");
 
 Route::get("/createProyect", function (){
     return view('insertProyecto');
