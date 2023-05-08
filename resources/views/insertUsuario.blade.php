@@ -22,32 +22,31 @@
       <div class="card card-usuario">
         <form method="POST" action="#">
           <div class="d-block  bd-highlight">
-            <label class="form-label" for="inputNombre">Nombre</label>
-            <input type="text" class="form-control" placeholder="Nombre" id=" inputName" name="inputName" required>
+            <label class="form-label" for="name">Nombre</label>
+            <input type="text" class="form-control" placeholder="Nombre" id="name" name="name" required>
           </div>
           <div class="mb-3">
-            <label class="form-label" for="inputApellido">Apellido</label>
-            <input type="text" class="form-control" placeholder="Apellido" id="inputApellido" name="inputApellido"
-              required>
+            <label class="form-label" for="lastname">Apellido</label>
+            <input type="text" class="form-control" placeholder="Apellido" id="lastname" name="lastname" required>
           </div>
           <div class="mb-3">
-            <label class="form-label" for="inputUser">User</label>
-            <input type="text" class="form-control" placeholder="Usuario" id=" inputUser" name="inputUser" required>
+            <label class="form-label" for="user">User</label>
+            <input type="text" class="form-control" placeholder="Usuario" id="user" name="user" required>
           </div>
 
           <div class="mb-3">
-            <label class="form-label" for="inputEmail">Email</label>
-            <input type="email" class="form-control" placeholder="Email" id="inputEmail" name="inputEmail" required>
+            <label class="form-label" for="email">Email</label>
+            <input type="email" class="form-control" placeholder="Email" id="email" name="email" required>
           </div>
 
 
           <div class="mb-4">
-            <label class="form-label" for="inputPass">Password</label>
-            <input type="password" class="form-control" placeholder="Password" id="inputPass" name="inputPass" required>
+            <label class="form-label" for="password">Password</label>
+            <input type="password" class="form-control" placeholder="Password" id="password" name="password" required>
           </div>
           <div class="mb-3">
-            <label class="form-label " for="inputIntentos">Intentos</label>
-            <input type="number" class="form-control" id="inputIntentos" name="inputIntentos" required>
+            <label class="form-label " for="intentos">Intentos</label>
+            <input type="number" class="form-control" id="intentos" name="intentos" required>
           </div>
           <div class="mb-3">
             <label class="form-label" for="inputCuenta">Cuenta Verificada</label>
