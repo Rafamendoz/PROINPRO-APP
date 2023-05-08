@@ -80,7 +80,7 @@
 
       <!-- Nav Item - Utilities Collapse Menu -->
       @role('Administrador')
-   
+
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
           aria-expanded="true" aria-controls="collapseUtilities">
@@ -98,15 +98,15 @@
       @endrole
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-          aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapses" aria-expanded="true"
+          aria-controls="collapses">
           <i class="fas "></i>
           <span>Token</span>
         </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+        <div id="collapses" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Utilities:</h6>
-            <a class="collapse-item" href="utilities-color.html">Generar Token</a>
+            <h6 class="collapse-header">Custom Components:</h6>
+            <a class="collapse-item" href="buttons.html">Generar Token</a>
           </div>
         </div>
       </li>
@@ -390,12 +390,12 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-        
-         
-    
+
+
+
           <a class="btn btn-primary" href="{{route('logout')}}">Logout</a>
 
-   
+
         </div>
       </div>
     </div>
@@ -418,7 +418,7 @@
   <!-- Page level custom scripts -->
   <script src="{{ asset('build/js/demo/datatables-demo.js')}}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.js"></script>
-  
+
 </body>
 
 </html>
