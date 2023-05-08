@@ -43,7 +43,7 @@ Route::get("usuario/insert", function (){
 
 Route::get("/createProyect", function (){
     return view('insertProyecto');
-});
+})->name('crearProyecto');
 
 
 
