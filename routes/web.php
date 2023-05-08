@@ -21,13 +21,10 @@ Route::get('/admin', function () {
     return view('uploadfiles');
 });
 
-/*Route::get('/', 'App\Http\Controllers\DropzoneController@store')->name('dropzone.store');*/
 
 Route::resource('/admin/files','App\Http\Controllers\FileController');
 
-Route::get("/test", function (){
-    return view('test');
-});
+
 
 Route::post('validate', 'App\Http\Controllers\LoginController@login')->name('validate');
 Route::get('logout', 'App\Http\Controllers\LoginController@logout')->name('logout');
@@ -39,16 +36,14 @@ Route::get("/login", function (){
 })->name('login');
 
 
-Route::get("/insert", function (){
+Route::get("usuario/insert", function (){
     return view('insertUsuario');
-});
-Route::get("/list", function (){
-    return view('listarUsuario');
-});
+})->name("insertarUsuario");
+
 
 Route::get("/createProyect", function (){
     return view('insertProyecto');
-});
+})->name('crearProyecto');
 
 
 
@@ -56,11 +51,11 @@ Route::get("/createProyect", function (){
  
 Route::get('proyecto/{id}', 'App\Http\Controllers\ProyectoController@getProyectoById');
 Route::get('proyectosR/', 'App\Http\Controllers\ProyectoController@getProyectosRest');
-Route::get('proyectos/', 'App\Http\Controllers\ProyectoController@getProyectos')->middleware('auth');
+Route::get('proyectos/', 'App\Http\Controllers\ProyectoController@getProyectos')->middleware('auth')->name('getProyectos');
 
 
 
 Route::get('/usuarioR/', 'App\Http\Controllers\UsuarioController@getUsuariosRest');
-Route::get('/usuario/', 'App\Http\Controllers\UsuarioController@getUsuarios');
+Route::get('usuarios/', 'App\Http\Controllers\UsuarioController@getUsuarios')->name('getUsuario');
 Route::get('/download/{id}/{filename}', 'App\Http\Controllers\FileController@download');
 Route::get('/delete/{id}/{filename}', 'App\Http\Controllers\FileController@destroy');

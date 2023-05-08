@@ -69,9 +69,9 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Components:</h6>
-            <a class="collapse-item" href="buttons.html"> Crear Proyectos</a>
-            <a class="collapse-item" href="buttons.html"> Ver Proyectos</a>
+            <h6 class="collapse-header">Gestion de Proyectos:</h6>
+            <a class="collapse-item" href="{{route('crearProyecto')}}"> Crear Proyectos</a>
+            <a class="collapse-item" href="{{route('getProyectos')}}"> Ver Proyectos</a>
 
 
           </div>
@@ -89,9 +89,9 @@
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Utilities:</h6>
-            <a class="collapse-item" href="utilities-color.html">Usuarios</a>
-            <a class="collapse-item" href="utilities-color.html">Nuevos Usuarios</a>
+            <h6 class="collapse-header">Gestion de Usuarios:</h6>
+            <a class="collapse-item" href="{{route('getUsuario')}}">Usuarios</a>
+            <a class="collapse-item" href="{{route('insertarUsuario')}}">Nuevos Usuarios</a>
           </div>
         </div>
       </li>
@@ -313,7 +313,7 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"> {{ auth()->user()->name }} {{ auth()->user()->lastname }} </span>
                 <img class="img-profile rounded-circle" src="{{ asset('build/img/undraw_profile.svg')}}">
               </a>
               <!-- Dropdown - User Information -->
