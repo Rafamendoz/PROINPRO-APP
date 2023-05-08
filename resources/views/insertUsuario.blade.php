@@ -61,6 +61,13 @@
             </div>
 
           </div>
+          <div class="mb-3">
+            <label class="form-label " for="inputIntentos">Estado</label>
+            <select class="form-control form-control-sm">
+              <option>Activo</option>
+              <option>Inactivo</option>
+            </select>
+          </div>
 
           <button type="submit" class="btn btn-info">Registrar</button>
         </form>

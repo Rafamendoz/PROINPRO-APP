@@ -46,7 +46,9 @@ Route::get("/list", function (){
     return view('listarUsuario');
 });
 
-
+Route::get("/createProyect", function (){
+    return view('insertProyecto');
+});
 
 
 
@@ -62,7 +64,3 @@ Route::get('/usuarioR/', 'App\Http\Controllers\UsuarioController@getUsuariosRest
 Route::get('/usuario/', 'App\Http\Controllers\UsuarioController@getUsuarios');
 Route::get('/download/{id}/{filename}', 'App\Http\Controllers\FileController@download');
 Route::get('/delete/{id}/{filename}', 'App\Http\Controllers\FileController@destroy');
-
-
-
-
