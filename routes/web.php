@@ -49,7 +49,9 @@ Route::get("/profile", function (){
     return view('profile');
 })->name('Profile');
 
-
+Route::get("estado", function (){
+    return view('estado');
+})->name("Estados");
 
 //RUTAS PARA LA ENTIDAD PROYECTO
  

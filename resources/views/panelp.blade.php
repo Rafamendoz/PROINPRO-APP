@@ -123,7 +123,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
 
             <h6 class="collapse-header">Tablas Independientes</h6>
-            <a class="collapse-item" href="forgot-password.html">Estados</a>
+            <a class="collapse-item" href="{{route('Estados')}}">Estados</a>
 
           </div>
         </div>
