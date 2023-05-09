@@ -36,7 +36,7 @@ Route::get("/login", function (){
 })->name('login');
 
 
-Route::get("usuario/insert", function (){
+Route::post("usuario/insert", function (){
     return view('insertUsuario');
 })->name("insertarUsuario");
 
@@ -44,6 +44,10 @@ Route::get("usuario/insert", function (){
 Route::get("/createProyect", function (){
     return view('insertProyecto');
 })->name('crearProyecto');
+
+Route::get("/profile", function (){
+    return view('profile');
+})->name('Profile');
 
 
 
