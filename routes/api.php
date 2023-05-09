@@ -20,10 +20,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 //RUTAS PARA LA ENTIDAD PROYECTO
 
-Route::post('/proyectoR/add', 'App\Http\Controllers\ProyectoController@setProyecto');
+Route::post('/proyectoR/add', 'App\Http\Controllers\ProyectoController@setProyecto')->name('insertarProyecto');
 Route::get('/proyectosR/', 'App\Http\Controllers\ProyectoController@getProyectosRest');
 Route::put('/proyectoR/update/{id}', 'App\Http\Controllers\ProyectoController@putProyecto');
 Route::get('/proyectoR/{id}', 'App\Http\Controllers\ProyectoController@getProyectoRestById');
+Route::delete('/proyectoR/delete', 'App\Http\Controllers\ProyectoController@deleteProyectos');
 
 
 

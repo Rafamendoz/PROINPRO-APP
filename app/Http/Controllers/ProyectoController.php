@@ -24,9 +24,15 @@ class ProyectoController extends Controller
 
     //SERVICIOS REST
     public function setProyecto(Request $request){
-        $proyecto = Proyecto::create($request->all());
-        return response()->json(["Proyecto"=>$proyecto, "Estado"=>"Existo", "Descripcion"=>'Registro Agregado'],202);
+        if(is_null($request->nombre_proyecto) || empty($request->nombre_proyecto)){
+            return response()->json(["Estado"=>"Fallido", "Descripcion"=>'Ha Ocurrido un Error', "Codigo Error"=>500],200);
 
+        }else{
+            $proyecto = Proyecto::create($request->all());
+            return response()->json(["Proyecto"=>$proyecto, "Estado"=>"Existoso", "Descripcion"=>'Registro Agregado'],202);
+    
+        }
+       
 
     }
 
@@ -46,6 +52,13 @@ class ProyectoController extends Controller
         $proyecto = Proyecto::find($id);
         $proyecto->update($request->all());
         return response()->json(["Proyecto"=>$proyecto, "Estado"=>"Existoso", "Descripcion"=>"Registro Modificado"]);
+
+    }
+
+
+    public function deleteProyectos(){
+        $proyecto = Proyecto::delete();
+        return response()->json(["Estado"=>"Existoso", "Descripcion"=>"Registros Eliminados"]);
 
     }
 }
