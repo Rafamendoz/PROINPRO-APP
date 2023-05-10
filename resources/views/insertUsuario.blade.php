@@ -3,21 +3,25 @@
 
 @section('tablabase')
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Usuarios</h1>
+<nav aria-label="breadcrumb" class="">
+  <ol class="breadcrumb shadow p-3 mb-4 bg-light rounded">
+    <li class="breadcrumb-item active" aria-current="page">Crear Usuarios</li>
+  </ol>
+</nav>
 
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
   <div class="card-header py-3">
     <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-      <h5 class=" font-weight-bold text-info">Registro de Usuarios</h5>
+      <h5 class=" font-weight-bold text-info">Panel de Creacion de Usuarios</h5>
 
     </div>
 
 
 
   </div>
-  <div class="container ">
+  <div class="container">
     <div class="row mx-2 p-2 d-flex justify-content-between">
       <div class="card card-usuario">
         <form id="fRegistroUsuarios">

@@ -46,9 +46,7 @@ Route::get("/profile", function (){
     return view('profile');
 })->name('Profile');
 
-Route::get("estado", function (){
-    return view('estado');
-})->name("Estados");
+Route::get("estado", 'App\Http\Controllers\EstadoController@getEstados')->name('estados');
 
 //RUTAS PARA LA ENTIDAD PROYECTO
  

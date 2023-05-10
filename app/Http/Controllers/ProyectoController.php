@@ -27,7 +27,7 @@ class ProyectoController extends Controller
     public function getProyectoById($id){
         $proyecto = Proyecto::find($id);
         $count = Files::where('id_proyecto',$id)->count();
-        return view('uploadfiles', compact('proyecto', 'count'));
+        return view('uploadfiles', compact('proyecto', 'count', 'id'));
     }
 
 

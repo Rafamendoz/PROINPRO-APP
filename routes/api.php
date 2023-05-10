@@ -40,7 +40,7 @@ Route::get('usuarioR/assing/role','App\Http\Controllers\UsuarioController@asigna
 //RUTAS PARA LA ENTIDAD ESTADO
 Route::get('/estadosR/', 'App\Http\Controllers\EstadoController@getEstadosRest');
 Route::get('/estadoR/{id}', 'App\Http\Controllers\EstadoController@getEstadoRestById');
-Route::post('estadoR/add', 'App\Http\Controllers\EstadoController@setEstado');
+Route::post('estadoR/add', 'App\Http\Controllers\EstadoController@setEstado')->name('registrarEstado');
 Route::put('estadoR/update/{id}', 'App\Http\Controllers\EstadoController@putEstado');
 Route::delete('estadoR/delete/{id}', 'App\Http\Controllers\EstadoController@deleteEstado');
 

@@ -3,14 +3,20 @@
 
 @section('tablabase')
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Archivos</h1>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb shadow p-3 mb-4 bg-light rounded">
+    <li class="breadcrumb-item"><a href="{{route('getProyectos')}}">Ver Proyectos</a></li>
+    <li class="breadcrumb-item"><a href="/admin/files/{{$id}}">Archivos</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Subir Archivos</li>
+  </ol>
+</nav>
 
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
         <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-          <h5 class=" font-weight-bold text-info">Panel de Archivos</h5>
+          <h5 class=" font-weight-bold text-info">Cargador de Archivos</h5>
         </div>
 
 

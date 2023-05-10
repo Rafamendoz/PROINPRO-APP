@@ -90,8 +90,8 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Gestion de Usuarios:</h6>
-            <a class="collapse-item" href="{{route('getUsuario')}}">Usuarios</a>
-            <a class="collapse-item" href="{{route('insertarUsuario')}}">Nuevos Usuarios</a>
+            <a class="collapse-item" href="{{route('insertarUsuario')}}">Crear Usuarios</a>
+            <a class="collapse-item" href="{{route('getUsuario')}}">Ver Usuarios</a>
           </div>
         </div>
       </li>
@@ -123,7 +123,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
 
             <h6 class="collapse-header">Tablas Independientes</h6>
-            <a class="collapse-item" href="{{route('Estados')}}">Estados</a>
+            <a class="collapse-item" href="{{route('estados')}}">Estados</a>
 
           </div>
         </div>

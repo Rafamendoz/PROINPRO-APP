@@ -7,6 +7,12 @@ use App\Models\Estado;
 
 class EstadoController extends Controller
 {
+    public function getEstados(){
+        $estados = Estado::all();
+        return view('estado' , compact('estados'));
+    }
+
+
     public function getEstadosRest(){
             $estados = Estado::all();
             return response()->json(['Estados'=>$estados, 'Estado'=>"Existo", 'Descripcion'=>"Registros Encontrados"],200);

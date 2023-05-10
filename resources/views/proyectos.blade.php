@@ -3,8 +3,13 @@
 
 @section('tablabase')
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Proyectos</h1>
 
+
+<nav aria-label="breadcrumb" class="">
+  <ol class="breadcrumb shadow p-3 mb-4 bg-light rounded">
+    <li class="breadcrumb-item active" aria-current="page">Ver Proyectos</li>
+  </ol>
+</nav>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
