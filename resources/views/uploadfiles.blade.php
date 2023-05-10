@@ -20,6 +20,7 @@
     </div>
 
     <div class="container ">
+      
       <div class="row ">
 
       
@@ -36,8 +37,8 @@
             </div>
 
             <div class="form-group"> 
-              <label for="">Total de Archivos Actuales bajo el Proyecto:</label>
-              <label for=""><b>5</b></label>
+              <label for="">Total de archivos actuales bajo el proyecto:</label>
+              <label for=""><b>{{$count}}</b></label>
             </div>
             <br>
             <br>

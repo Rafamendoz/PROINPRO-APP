@@ -20,25 +20,7 @@
   </div>
   <div class="container ">
 
-    <section class="pb-4">
-      <section class="w-100 p-4 pb-4 d-flex justify-content-center align-items-center flex-column">
-        <div>
-          <div class="input-group">
-            <div class="form-outline d-flex">
-              <input type="search" id="form1" class="form-control" />
-              <label class="form-label" for="form1"></label>
-              <button type="button" class="btn btn-primary">
-                <i class="fas fa-search"></i>
-              </button>
-            </div>
-
-          </div>
-        </div>
-
-
-      </section>
-
-    </section>
+   
 
 
 
@@ -53,7 +35,7 @@
 
       @foreach ($proyectos as $file)
 
-      <a href="/proyecto/{{$file->id}}">
+      <a href="/admin/files/{{$file->id}}">
         <div class="card-body btn btn-outline-primary m-2">
           <h5 class="card-title"><b>
               <i class="fa-sharp fa-solid m-2 fa-circle-info fa-shake"></i>{{$file->nombre_proyecto}}</b></h5>

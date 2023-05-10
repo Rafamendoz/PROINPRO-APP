@@ -17,9 +17,9 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/admin', function () {
+Route::get('/admin/{id}', function () {
     return view('uploadfiles');
-});
+})->name('upArchivos');
 
 
 Route::resource('/admin/files','App\Http\Controllers\FileController');
@@ -40,9 +40,7 @@ Route::get("usuario/insert",'App\Http\Controllers\UsuarioController@loadList'
 )->name("insertarUsuario");
 
 
-Route::get("/createProyect", function (){
-    return view('insertProyecto');
-})->name('crearProyecto');
+Route::get("/createProyect","App\Http\Controllers\ProyectoController@loadList")->name('crearProyecto');
 
 Route::get("/profile", function (){
     return view('profile');

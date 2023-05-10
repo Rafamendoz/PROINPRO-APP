@@ -69,7 +69,7 @@ class FileController extends Controller
     {
         $archivos = Files::all()->where('id_proyecto',$id);
         
-        return view('archivos',compact('archivos'));
+        return view('archivos',compact('archivos', 'id'));
     }
 
     /**

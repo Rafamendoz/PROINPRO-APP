@@ -35,8 +35,8 @@
           <div class="mb-3">
             <label class="form-label mt-3" for="inputIntentos">Estado:</label>
             <select class="form-control form-control-sm" id="estado">
-              @foreach($result as $data)
-              <option value="1">{{$data['roles']}}</option>
+              @foreach($estados as $data)
+              <option value="1">{{$data['valor_estado']}}</option>
 
               @endforeach
             </select>

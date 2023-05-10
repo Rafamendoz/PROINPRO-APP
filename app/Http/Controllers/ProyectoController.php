@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Proyecto;
+use App\Models\Files;
+
+use App\Models\Estado;
 
 class ProyectoController extends Controller
 {
@@ -16,9 +19,15 @@ class ProyectoController extends Controller
         return view('proyectos', compact('proyectos'));
     }
 
+    public function loadList(){
+        $estados = Estado::all();
+        return view('insertProyecto',compact('estados'));
+    }
+
     public function getProyectoById($id){
         $proyecto = Proyecto::find($id);
-        return view('uploadfiles', compact('proyecto'));
+        $count = Files::where('id_proyecto',$id)->count();
+        return view('uploadfiles', compact('proyecto', 'count'));
     }
 
 
@@ -59,6 +68,10 @@ class ProyectoController extends Controller
     public function deleteProyectos(){
         $proyecto = Proyecto::delete();
         return response()->json(["Estado"=>"Existoso", "Descripcion"=>"Registros Eliminados"]);
+
+    }
+
+    public function contarArchivos(){
 
     }
 }

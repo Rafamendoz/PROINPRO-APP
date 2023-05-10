@@ -18,6 +18,25 @@
 
   <div class="card-body">
     <div class="table-responsive">
+    <section class="pb-4">
+      <section class="w-100 p-4 pb-4 d-flex flex-column">
+        <div>
+          <div class="input-group">
+            <div class="form-outline d-flex">
+             
+              <a href="/proyecto/{{$id}}" class="btn btn-primary">
+                <i class="fas fa-plus"></i> Agregar Archivos
+              </a>
+           
+
+          </div>
+        </div>
+
+
+      </section>
+
+    </section>
+
 
       <table class="table table-bordered " id="dataTable" width="100%" cellspacing="0">
         <thead class="text-center">
