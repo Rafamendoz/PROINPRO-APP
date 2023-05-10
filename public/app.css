@@ -16,3 +16,16 @@
  
 
 }
+.card-profile{
+
+  margin-top: 2%;
+  padding: 4% 2%;
+  width: 100%;
+ 
+}
+#images{
+  border-radius: 55%;
+  width: 90%;
+  margin-left: 10%;
+
+}

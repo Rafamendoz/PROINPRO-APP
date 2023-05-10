@@ -3,46 +3,55 @@
 
 @section('tablabase')
 <!-- Page Heading -->
-<h1 class="h2 text-gray-800 text-center">Profile</h1>
-<h5 class="text-gray-800 text-center">I am {{auth()->user()->name}}</h5>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb shadow p-3 mb-2 bg-light rounded">
+    <li class="breadcrumb-item active" aria-current="page">Profile</li>
+  </ol>
+</nav>
+
+
+
 
 
 <!-- DataTales Example -->
-<div class="container mt-5  mx-5 ">
-  <div class="row">
-    <div class="col ">
-      <div class="card-body">
-        <h5 class="card-title">About me</h5>
-        <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the
-          card's
-          content. Some quick example text to build on the card title and make up the bulk of the
-          card's
-          content</p>
+<div class="card shadow mb-4 ">
+  <div class="card-header bg-white py-0">
+    <div class="d-grid gap-3 d-md-flex justify-content-md-center">
+      <h1 class=" text-info text-center mt-2"> Mi Perfil</h1>
+
+    </div>
+    <div class="container ">
+      <div class="row mx-2 p-2 justify-content-center ">
+
+
+        <div class="card card-profile mb-5 mx-3">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="{{ asset('img/undraw_profile_2.svg')}}" class="card-img rounded-circle" alt="person"
+                id="images">
+
+            </div>
+            <div class="col-md-4  mt-5">
+              <div class="card-body text-center">
+                <h1 class="card-title text-info mb-4"><strong><u>Informacion</u></strong></h1>
+                <h3 class="card-text text-info text-justify"><strong>Name: </strong>
+                  {{auth()->user()->name}}</h3><br>
+
+                <h3 class="card-text text-info text-justify"><strong>Apellido: </strong>
+                  {{auth()->user()->lastname}}</h3><br>
+
+                <h3 class="card-text text-info text-justify"><strong>Rol: </strong></h3>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
       </div>
     </div>
-    <div class="col">
-
-      <img src="{{ asset('person.jpg')}}" class="rounded-circle" alt="person" width="280" height="230">
 
 
 
-
-    </div>
-    <div class="col">
-      <div class="card-body text-justify">
-        <h5 class="card-title text-dark">Details</h5>
-        <h6 class="card-subtitle text-dark">Name</h6>
-        <p class="card-text"><small class="text-body-secondary">{{auth()->role()->id_role}}</small></p>
-        <h6 class="card-subtitle text-dark fw-bold">Apellido</h6>
-        <p class="card-text"><small class="text-body-secondary">{{auth()->user()->lastname}}</small></p>
-        <h6 class="card-subtitle text-dark fw-bold">Rol</h6>
-        <p class="card-text"><small class="text-body-secondary">{{auth()->user()->rol}}</small></p>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-@endsection
+    @endsection
