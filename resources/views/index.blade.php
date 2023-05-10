@@ -65,19 +65,15 @@
                     <button type="submit" class="btn btn-turquesa btn-user btn-block">
                       Login
                     </button>
-                    <hr>
-                    <a href="index.html" class="btn btn-google btn-user btn-block">
-                      <i class="fab fa-google fa-fw"></i> Login with Google
-                    </a>
+                 
                     
                   </form>
                   <hr>
+               
                   <div class="text-center">
                     <a class="small" href="forgot-password.html">Olvido su contraseña?</a>
                   </div>
-                  <div class="text-center">
-                    <a class="small" href="register.html">Crear una Cuenta!</a>
-                  </div>
+             
                 </div>
               </div>
             </div>
