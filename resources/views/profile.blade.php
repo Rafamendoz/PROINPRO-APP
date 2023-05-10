@@ -11,10 +11,8 @@
 
 
 
-
-
 <!-- DataTales Example -->
-<div class="card shadow mb-4 ">
+<div class="card shadow mb-4">
   <div class="card-header bg-white py-0">
     <div class="d-grid gap-3 d-md-flex justify-content-md-center">
       <h1 class=" text-info text-center mt-2"> Mi Perfil</h1>
@@ -33,6 +31,7 @@
       </div>
     </div>
 
+</div>
 
 
-    @endsection
+@endsection
