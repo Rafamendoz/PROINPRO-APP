@@ -31,10 +31,11 @@
                       <thead class="text-center">
                         <tr>
                           <th>Nombre</th>
+                          <th>Apellido</th>
                           <th>Email</th>
                           <th>Intentos</th>
                           <th>Usuario</th>
-                          <th>Verificado</th>
+                          <th>Estado</th>
                           <th>Creado</th>
                           <th>Actualizado</th>
                           <th>Acciones</th>
@@ -45,15 +46,18 @@
                         @foreach ($usuarios as $user)
                           <tr>
                               <td>{{ $user->name }}</td>
+                              <td>{{ $user->lastname }}</td>
                               <td>{{$user->email }}</td>
                               <td>{{$user->intentos}}</td>
                               <td>{{$user->user }}</td>
-                              <td>{{$user->email_verified_at }}</td>
+                              <td>{{$user->valor_estado }}</td>
                               <td>{{$user->created_at }}</td>
                               <td>{{$user->updated_at }}</td>
+                       
+
                               <td>
                                 <button class="btn btn-danger btn-sm" type="button"><i class="fas fa-trash"></i></button>
-                                <button class="btn btn-primary btn-sm" type="button"><i class="fas fa-save"></i></button>
+                                <a class="btn btn-primary btn-sm" href="usuario/update/{{$user->user}}"><i class="fas fa-edit"></i></button>
                               </td>
                           </tr>
                         @endforeach

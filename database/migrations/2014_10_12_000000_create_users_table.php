@@ -17,9 +17,12 @@ return new class extends Migration
             $table->string('lastname');
             $table->string('user')->unique();
             $table->string('email')->unique();
+
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->unsignedBigInteger('intentos');
+
             $table->unsignedBigInteger('estado');
             $table->timestamps();
         });

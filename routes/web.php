@@ -40,6 +40,10 @@ Route::get("usuario/insert",'App\Http\Controllers\UsuarioController@loadList'
 )->name("insertarUsuario");
 
 
+Route::get("usuario/update/{id}",'App\Http\Controllers\UsuarioController@loadListUpdateUsuario'
+)->name("actualizarUsuario");
+
+
 Route::get("/createProyect","App\Http\Controllers\ProyectoController@loadList")->name('crearProyecto');
 
 Route::get("/profile", function (){
@@ -60,3 +64,4 @@ Route::get('/usuarioR/', 'App\Http\Controllers\UsuarioController@getUsuariosRest
 Route::get('usuarios/', 'App\Http\Controllers\UsuarioController@getUsuarios')->name('getUsuario');
 Route::get('/download/{id}/{filename}', 'App\Http\Controllers\FileController@download');
 Route::get('/delete/{id}/{filename}', 'App\Http\Controllers\FileController@destroy');
+

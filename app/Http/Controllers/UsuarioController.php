@@ -16,6 +16,13 @@ class UsuarioController extends Controller
 
     // SERVICIOS 
 
+    public function loadListUpdateUsuario($user){
+        $usuario = User::where('user', $user)->join('model_has_roles','model_has_roles.model_id','=', 'users.id')->get();
+        $roles = Role::all();
+        $estados = Estado::all();
+      return view('updateUsuario',compact('usuario','roles', 'estados'));
+    }
+
     public function loadList(){
         $roles = Role::all();
         $estados = Estado::all();
@@ -30,6 +37,8 @@ class UsuarioController extends Controller
         'email'=>$request->email,
         'password'=>Hash::make($request->password),
         'estado'=>$request->estado,
+        'intentos'=>$request->intentos
+
         ])->assignRole($request->rol);;
 
      
@@ -52,15 +61,15 @@ class UsuarioController extends Controller
 
 
     public function getUsuarioRestByUser($user){
-        $usuario = DB::table('users')->where('user', $user)->join('estado', 'users.estado','=','estado.id')
-        ->select('users.id', 'users.name','users.lastname', 'estado.valor_estado')->get();
+        $usuario = User::where('user', $user)->join('estado', 'users.estado','=','estado.id')->select('users.*', 'estado.valor_estado')
+        ->get();
         return response()->json(['Usuario'=>$usuario, 'Estado'=>'Exitoso', 'Descripcion'=>"Registro Encontrado"],200);
 
     }
 
     public function getUsuarios(){
-        $usuarios = User::join('estado', 'users.estado','=','estado.id')
-        ->select('users.id', 'users.name','users.i');
+        $usuarios = DB::table('users')->join('estado', 'users.estado','=','estado.id')
+        ->get();
         return view('listarUsuario', compact('usuarios'));
 
     }

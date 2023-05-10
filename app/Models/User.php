@@ -24,7 +24,7 @@ class User extends Authenticatable
         'user',
         'lastname',
         'password',
-        'estado'
+        'estado','intentos'
    
     ];
 
