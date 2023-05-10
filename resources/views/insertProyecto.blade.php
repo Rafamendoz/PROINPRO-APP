@@ -78,7 +78,7 @@
     {"nombre_proyecto":nombre_proyecto, "descripcion":descripcion, "estado":estado}
     , function(data){
         let resultado = data['Estado'];
-        if(resultado=="Existoso"){
+        if(resultado=="Exitoso"){
           const Toast = Swal.mixin({
               toast: true,
               position: 'top-end',
