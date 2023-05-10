@@ -35,8 +35,10 @@
           <div class="mb-3">
             <label class="form-label mt-3" for="inputIntentos">Estado:</label>
             <select class="form-control form-control-sm" id="estado">
-              <option value="1">Activo</option>
-              <option value="2">Inactivo</option>
+              @foreach($result as $data)
+              <option value="1">{{$data['roles']}}</option>
+
+              @endforeach
             </select>
           </div>
 
@@ -132,9 +134,6 @@
     $("#inputProject").prop("readonly", true);
     $("#inputDescrip").prop("readonly", true);
     $("#estado").prop("disabled", true);
-
-
-
   }
 
   function activarCampos(){
@@ -144,9 +143,6 @@
     $("#estado").prop("disabled", false);
     $("#btnRegistrar").prop('hidden', false);
     $("#btnNuevoRegistro").prop('hidden', true);
-
-
-
   }
 
 </script>

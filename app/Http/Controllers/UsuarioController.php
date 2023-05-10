@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Estado;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
@@ -12,6 +13,14 @@ class UsuarioController extends Controller
 {
 
     // SERVICIOS 
+
+    public function loadList(){
+        $roles = Role::all();
+        $estados = Estado::all();
+        $result =response()->json(["roles"=>$roles, "estados"=>$estados]);
+        return view('insertUsuario',compact('roles', 'estados'));
+    }
+
     public function setUsuario(Request $request){
        $usuario= User::create(['name'=>$request->name,
         'lastname'=>$request->lastname,

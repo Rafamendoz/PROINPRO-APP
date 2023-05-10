@@ -36,9 +36,8 @@ Route::get("/login", function (){
 })->name('login');
 
 
-Route::post("usuario/insert", function (){
-    return view('insertUsuario');
-})->name("insertarUsuario");
+Route::get("usuario/insert",'App\Http\Controllers\UsuarioController@loadList'
+)->name("insertarUsuario");
 
 
 Route::get("/createProyect", function (){

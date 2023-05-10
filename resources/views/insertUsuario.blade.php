@@ -61,14 +61,28 @@
 
           </div>
           <div class="mb-3">
-            <label class="form-label " for="inputIntentos">Estado</label>
+            <label class="form-label " for="inputIntentos">Estado:</label>
             <select class="form-control form-control-sm">
-              <option>Activo</option>
-              <option>Inactivo</option>
+            @foreach ($estados as $data)
+              <option value="{{$data["id"]}}">{{$data["valor_estado"]}}</option>
+
+              @endforeach
             </select>
           </div>
 
-          <button type="submit" class="btn btn-info">Registrar</button>
+          <div class="mb-3">
+            <label class="form-label " for="inputRol">Rol:</label>
+            <select class="form-control form-control-sm">
+            @foreach ($roles as $data)
+              <option value="{{$data["id"]}}">{{$data["name"]}}</option>
+
+              @endforeach
+            </select>
+          </div>
+
+          <button type="button" onclick="Send()" class="btn btn-info">Registrar</button>
+          <button type="button" onclick="activarCampos();" class="btn btn-info" id="btnNuevoRegistro" hidden>Nuevo Registro</button>
+
         </form>
       </div>
 
@@ -85,6 +99,75 @@
 
 
 </div>
+
+<script>
+ function Send(){
+    let name = $("#name").val();
+    let lastname = $("#lastname").val();
+    let user =$("#user").val();
+    let email =$("#email").val();
+    let password =$("#password").val();
+
+    $.post("{{route('insertarProyecto')}}",
+    {"name":name, "lastname":lastname, "user":user, "email":email, "password":password}
+    , function(data){
+        let resultado = data['Estado'];
+        if(resultado=="Existoso"){
+          const Toast = Swal.mixin({
+              toast: true,
+              position: 'top-end',
+              showConfirmButton: false,
+              timer: 3000,
+              timerProgressBar: true,
+              didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+              }
+            })
+
+            Toast.fire({
+              icon: 'success',
+              title: data['Estado']+'!'+' '+data['Descripcion']
+            })
+
+            $("#btnRegistrar").prop('hidden', true);
+
+            $("#btnNuevoRegistro").prop('hidden', false);
+            desactivarCampos();
+
+
+
+        }else{  
+          const Toast = Swal.mixin({
+              toast: true,
+              position: 'top-end',
+              showConfirmButton: false,
+              timer: 3000,
+              timerProgressBar: true,
+              didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+              }
+            })
+
+            Toast.fire({
+              icon: 'error',
+              title: data['Estado']+'!'+' '+data['Descripcion']
+            })
+           
+
+            
+
+        }
+     
+
+    }
+    
+    
+    );
+  }
+
+</script>
 
 
 
