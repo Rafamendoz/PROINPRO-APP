@@ -20,7 +20,7 @@
     rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="{{ asset('build/css/sb-admin-2.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.css">
   <link href="{{ asset('app.css') }}" rel="stylesheet">
 
@@ -205,7 +205,7 @@
                 aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"> {{ auth()->user()->name }}
                   {{ auth()->user()->lastname }} </span>
-                <img class="img-profile rounded-circle" src="{{ asset('build/img/undraw_profile.svg')}}">
+                <img class="img-profile rounded-circle" src="{{ asset('img/undraw_profile.svg')}}">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

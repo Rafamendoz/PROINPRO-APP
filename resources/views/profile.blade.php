@@ -4,7 +4,7 @@
 @section('tablabase')
 <!-- Page Heading -->
 <h1 class="h2 text-gray-800 text-center">Profile</h1>
-<h5 class="text-gray-800 text-center">I am XXXXXX</h5>
+<h5 class="text-gray-800 text-center">I am {{auth()->user()->name}}</h5>
 
 
 <!-- DataTales Example -->
@@ -32,11 +32,11 @@
       <div class="card-body text-justify">
         <h5 class="card-title text-dark">Details</h5>
         <h6 class="card-subtitle text-dark">Name</h6>
-        <p class="card-text"><small class="text-body-secondary">Ana Paz</small></p>
+        <p class="card-text"><small class="text-body-secondary">{{auth()->role()->id_role}}</small></p>
+        <h6 class="card-subtitle text-dark fw-bold">Apellido</h6>
+        <p class="card-text"><small class="text-body-secondary">{{auth()->user()->lastname}}</small></p>
         <h6 class="card-subtitle text-dark fw-bold">Rol</h6>
-        <p class="card-text"><small class="text-body-secondary">Rol</small></p>
-        <h6 class="card-subtitle text-dark fw-bold">Rol</h6>
-        <p class="card-text"><small class="text-body-secondary">Rol</small></p>
+        <p class="card-text"><small class="text-body-secondary">{{auth()->user()->rol}}</small></p>
 
       </div>
     </div>
