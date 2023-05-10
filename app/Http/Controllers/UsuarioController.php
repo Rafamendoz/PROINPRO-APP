@@ -8,6 +8,8 @@ use App\Models\Estado;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use Illuminate\Support\Facades\DB;
+
 
 class UsuarioController extends Controller
 {
@@ -27,6 +29,7 @@ class UsuarioController extends Controller
         'user'=>$request->user,
         'email'=>$request->email,
         'password'=>Hash::make($request->password),
+        'estado'=>$request->estado,
         ])->assignRole($request->rol);;
 
      
@@ -49,13 +52,15 @@ class UsuarioController extends Controller
 
 
     public function getUsuarioRestByUser($user){
-        $usuario = User::where('user', $user)->get();
+        $usuario = DB::table('users')->where('user', $user)->join('estado', 'users.estado','=','estado.id')
+        ->select('users.id', 'users.name','users.lastname', 'estado.valor_estado')->get();
         return response()->json(['Usuario'=>$usuario, 'Estado'=>'Exitoso', 'Descripcion'=>"Registro Encontrado"],200);
 
     }
 
     public function getUsuarios(){
-        $usuarios = User::all();
+        $usuarios = User::join('estado', 'users.estado','=','estado.id')
+        ->select('users.id', 'users.name','users.i');
         return view('listarUsuario', compact('usuarios'));
 
     }
