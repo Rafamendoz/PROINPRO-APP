@@ -15,12 +15,12 @@ class EstadoController extends Controller
 
     public function getEstadosRest(){
             $estados = Estado::all();
-            return response()->json(['Estados'=>$estados, 'Estado'=>"Existo", 'Descripcion'=>"Registros Encontrados"],200);
+            return response()->json(['Estados'=>$estados, 'Estado'=>"Exitoso", 'Descripcion'=>"Registros Encontrados"],200);
     }
 
     public function getEstadoRestById($id){
         $estados = Estado::find($id);
-        return response()->json(['Estados'=>$estados, 'Estado'=>"Existo", 'Descripcion'=>"Registro Encontrado"],200);
+        return response()->json(['Estados'=>$estados, 'Estado'=>"Exitoso", 'Descripcion'=>"Registro Encontrado"],200);
 }
 
     public function setEstado(Request $request){

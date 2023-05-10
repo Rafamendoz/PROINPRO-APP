@@ -38,7 +38,7 @@ class ProyectoController extends Controller
 
         }else{
             $proyecto = Proyecto::create($request->all());
-            return response()->json(["Proyecto"=>$proyecto, "Estado"=>"Existoso", "Descripcion"=>'Registro Agregado'],202);
+            return response()->json(["Proyecto"=>$proyecto, "Estado"=>"Exitoso", "Descripcion"=>'Registro Agregado'],202);
     
         }
        
@@ -47,12 +47,12 @@ class ProyectoController extends Controller
 
     public function getProyectosRest(){
         $proyectos = Proyecto::all();
-        return response()->json(["Proyectos"=>$proyectos, "Estado"=>"Existoso", "Descripcion"=>"Registro Encontrado"],200);
+        return response()->json(["Proyectos"=>$proyectos, "Estado"=>"Exitoso", "Descripcion"=>"Registro Encontrado"],200);
     }
 
     public function getProyectoRestById($id){
         $proyectos = Proyecto::find($id);
-        return response()->json(["Proyectos"=>$proyectos, "Estado"=>"Existoso", "Descripcion"=>"Registro Encontrado"],200);
+        return response()->json(["Proyectos"=>$proyectos, "Estado"=>"Exitoso", "Descripcion"=>"Registro Encontrado"],200);
     }
 
    
@@ -60,14 +60,14 @@ class ProyectoController extends Controller
     public function putProyecto(Request $request, $id){
         $proyecto = Proyecto::find($id);
         $proyecto->update($request->all());
-        return response()->json(["Proyecto"=>$proyecto, "Estado"=>"Existoso", "Descripcion"=>"Registro Modificado"]);
+        return response()->json(["Proyecto"=>$proyecto, "Estado"=>"Exitoso", "Descripcion"=>"Registro Modificado"]);
 
     }
 
 
     public function deleteProyectos(){
         $proyecto = Proyecto::delete();
-        return response()->json(["Estado"=>"Existoso", "Descripcion"=>"Registros Eliminados"]);
+        return response()->json(["Estado"=>"Exitoso", "Descripcion"=>"Registros Eliminados"]);
 
     }
 
