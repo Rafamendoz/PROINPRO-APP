@@ -30,7 +30,7 @@ Route::delete('/proyectoR/delete', 'App\Http\Controllers\ProyectoController@dele
 
 //RUTAS PARA LA ENTIDAD USUARIO
 
-Route::post('usuarioR/add', 'App\Http\Controllers\UsuarioController@setUsuario');
+Route::post('usuarioR/add', 'App\Http\Controllers\UsuarioController@setUsuario')->name('registrarUsuario');
 Route::get('usuarioR/{user}', 'App\Http\Controllers\UsuarioController@getUsuarioRestByUser');
 Route::get('usuariosR','App\Http\Controllers\UsuarioController@getUsuariosRest');
 Route::put('usuariosR/update/{user}','App\Http\Controllers\UsuarioController@putUsuario');
