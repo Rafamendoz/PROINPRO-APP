@@ -73,10 +73,18 @@
     let nombre_proyecto = $("#inputProject").val();
     let descripcion = $("#inputDescrip").val();
     let estado =$("#estado").val();
+    let data1 =     {"nombre_proyecto":nombre_proyecto, "descripcion":descripcion, "estado":estado};
+    let key = "{{env('x_api_key')}}" ;
+
     
-    $.post("{{route('insertarProyecto')}}",
-    {"nombre_proyecto":nombre_proyecto, "descripcion":descripcion, "estado":estado}
-    , function(data){
+    $.ajax({
+
+    url:"../api/proyectoR/add",
+    data: JSON.stringify(data1),
+    type: "post",
+    contentType: "application/json",
+    headers:{'x_api_key':key},
+    success:function(data){
         let resultado = data['Estado'];
         if(resultado=="Exitoso"){
           const Toast = Swal.mixin({
@@ -130,7 +138,7 @@
     }
     
     
-    );
+   } );
   }
 
 

@@ -69,7 +69,7 @@ class FileController extends Controller
     public function show(string $id)
     {   $proyecto = Proyecto::select('nombre_proyecto')->where('id', $id)->get();
         $archivos = Files::where('id_proyecto',$id)->join('proyectos', 'proyectos.id', '=', 'files.id_proyecto')->
-        select('files.id','files.file_name', 'proyectos.nombre_proyecto', 'files.created_at', 'files.updated_at')->get();
+        select('files.id','files.file_name', 'files.id_proyecto','proyectos.nombre_proyecto', 'files.created_at', 'files.updated_at')->get();
         
         return view('archivos',compact('proyecto','archivos', 'id'));
     }

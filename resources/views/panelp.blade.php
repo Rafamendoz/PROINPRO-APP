@@ -92,21 +92,7 @@
           </div>
         </div>
       </li>
-    
       <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapses" aria-expanded="true"
-          aria-controls="collapses">
-          <i class="fas fa-key"></i>
-          <span>Token</span>
-        </a>
-        <div id="collapses" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Components:</h6>
-            <a class="collapse-item" href="buttons.html">Generar Token</a>
-          </div>
-        </div>
-      </li>
       @endif
       <!-- Nav Item - Pages Collapse Menu -->
       @if(Auth()->user()->hasRole(['SuperAdministrador']))
@@ -137,7 +123,7 @@
 
 
       <!-- Divider -->
-      <hr class="sidebar-divider d-none d-md-block">
+
 
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
