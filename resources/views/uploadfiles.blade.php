@@ -36,7 +36,7 @@
 
     <div class="card-body">
       <div class="row p-4">
-        <div class="col-md-6 p-4">
+        <div class="col-md-5 p-4">
             <div class="form-group"> 
               <label for="">Proyecto:</label>
               <label for=""><b>{{$proyecto->nombre_proyecto}}</b></label>
@@ -68,7 +68,7 @@
         </div>
 
         <div class="col-md-6">
-          <img src="{{asset('build/img/Pronaders-1.jpg')}}" alt="" srcset="">
+          <img src="{{asset('img/Pronaders-1.jpg')}}" alt="" srcset="">
         </div>
       </div>
     </div>
