@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Files;
+use App\Models\Proyecto;
 
 use Illuminate\Support\Facades\Storage;
 
@@ -66,10 +67,11 @@ class FileController extends Controller
      * Display the specified resource.
      */
     public function show(string $id)
-    {
-        $archivos = Files::all()->where('id_proyecto',$id);
+    {   $proyecto = Proyecto::select('nombre_proyecto')->where('id', $id)->get();
+        $archivos = Files::where('id_proyecto',$id)->join('proyectos', 'proyectos.id', '=', 'files.id_proyecto')->
+        select('files.id','files.file_name', 'proyectos.nombre_proyecto', 'files.created_at', 'files.updated_at')->get();
         
-        return view('archivos',compact('archivos', 'id'));
+        return view('archivos',compact('proyecto','archivos', 'id'));
     }
 
     /**

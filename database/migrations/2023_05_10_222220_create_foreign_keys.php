@@ -14,6 +14,12 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->foreign('estado')->references('id')->on('estado')->onDelete('Cascade')->onUpdate('Cascade');
         });
+
+        Schema::table('proyectos', function (Blueprint $table) {
+            $table->foreign('estado')->references('id')->on('estado')->onDelete('Cascade')->onUpdate('Cascade');
+        });
+
+       
     }
 
     /**

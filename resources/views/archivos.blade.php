@@ -23,35 +23,48 @@
 
   <div class="card-body">
     <div class="table-responsive">
-    <section class="pb-4">
-      <section class="w-100 p-4 pb-4 d-flex flex-column">
-        <div>
-          <div class="input-group">
-            <div class="form-outline d-flex">
-             
-              <a href="/proyecto/{{$id}}" class="btn btn-primary">
-                <i class="fas fa-plus"></i> Agregar Archivos
-              </a>
-           
+      <section class="pb-4">
+          <section class="w-100 p-4 pb-4 d-flex flex-column">
+            <div>
+              <div class="input-group">
+                <div class="form-outline d-flex">
+                
+                  <a href="/proyecto/{{$id}}" class="btn btn-primary">
+                    <i class="fas fa-plus"></i> Agregar Archivos
+                  </a>
+              
 
-          </div>
-        </div>
+              </div>
+            </div>
 
+
+          </section>
 
       </section>
 
-    </section>
+      <section>
+      <div class="input-group">
+                <div class="form-outline d-flex">
+                
+                <label for="nameproyect">Nombre del Proyecto:</label>
+                <label for="" class="ml-1"><b>{{$proyecto[0]->nombre_proyecto}}</b></label>
+              </div>
+      
+      </section>
+
+
+
 
 
       <table class="table table-bordered " id="dataTable" width="100%" cellspacing="0">
         <thead class="text-center">
           <tr>
-            <th>Id</th>
+            <th>N.</th>
             <th>Nombre del Archivo</th>
-            <th>URL</th>
+            <th>Proyecto Correspondiente</th>
 
-            <th>CREACION</th>
-            <th>Actualizacion</th>
+            <th>Creacion del Archivo</th>
+            <th>Modificacion del Archivo</th>
 
             <th>Acciones</th>
 
@@ -63,7 +76,7 @@
           <tr>
             <td>{{ $file->id }}</td>
             <td>{{ $file->file_name }}</td>
-            <td>/public{{ $file->url }}</td>
+            <td>{{ $file->nombre_proyecto }}</td>
 
             <td>{{$file->created_at }}</td>
             <td>{{$file->updated_at }}</td>
@@ -81,6 +94,7 @@
       </table>
     </div>
   </div>
+
 </div>
 
 <script>
