@@ -49,9 +49,8 @@ Route::get("usuario/update/{id}",'App\Http\Controllers\UsuarioController@loadLis
 
 Route::get("/createProyect","App\Http\Controllers\ProyectoController@loadList")->name('crearProyecto');
 
-Route::get("/profile", function (){
-    return view('profile');
-})->name('Profile');
+Route::get("/profile/{id}", 'App\Http\Controllers\ModelHasRolesController@getRoleByIdUser'
+)->name('Profile');
 
 Route::get("estado", 'App\Http\Controllers\EstadoController@getEstados')->name('estados');
 

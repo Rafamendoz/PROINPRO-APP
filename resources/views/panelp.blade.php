@@ -11,7 +11,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
-  <title>Administracion - Dashboard</title>
+  <title>Administracion - ProInPro</title>
 
   <!-- Custom fonts for this template-->
   <link href="{{ asset('build/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -46,11 +46,7 @@
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="index.html">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
-      </li>
+    
 
       <!-- Divider -->
       <hr class="sidebar-divider">
@@ -114,7 +110,7 @@
       </li>
 
       <!-- Nav Item - Pages Collapse Menu -->
-      @role('Administrador')
+      @role('SuperAdministrador')
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
           aria-controls="collapsePages">
@@ -211,7 +207,7 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="{{route('Profile')}}">
+                <a class="dropdown-item" href="/profile/{{auth()->user()->id}}">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
