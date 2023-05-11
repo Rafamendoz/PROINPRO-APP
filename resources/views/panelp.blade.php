@@ -75,8 +75,7 @@
       </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
-      @role('Administrador')
-
+      @if(Auth()->user()->hasRole(['SuperAdministrador', 'Administrador']))
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
           aria-expanded="true" aria-controls="collapseUtilities">
@@ -93,7 +92,7 @@
           </div>
         </div>
       </li>
-      @endrole
+    
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapses" aria-expanded="true"
@@ -108,9 +107,9 @@
           </div>
         </div>
       </li>
-
+      @endif
       <!-- Nav Item - Pages Collapse Menu -->
-      @role('SuperAdministrador')
+      @if(Auth()->user()->hasRole(['SuperAdministrador']))
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
           aria-controls="collapsePages">
@@ -126,7 +125,7 @@
           </div>
         </div>
       </li>
-      @endrole
+      @endif
 
       <!-- Divider -->
       <hr class="sidebar-divider">
