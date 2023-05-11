@@ -33,7 +33,6 @@
                           <th>Nombre</th>
                           <th>Apellido</th>
                           <th>Email</th>
-                          <th>Intentos</th>
                           <th>Usuario</th>
                           <th>Estado</th>
                           <th>Creado</th>
@@ -48,7 +47,6 @@
                               <td>{{ $user->name }}</td>
                               <td>{{ $user->lastname }}</td>
                               <td>{{$user->email }}</td>
-                              <td>{{$user->intentos}}</td>
                               <td>{{$user->user }}</td>
                               <td>{{$user->valor_estado }}</td>
                               <td>{{$user->created_at }}</td>
@@ -79,14 +77,14 @@
     let data1={};
 
     data1 = {"estado":1};
-    console.log(data1);
- 
+    let key = "{{env('x_api_key')}}" ;
    
 
 
     $.ajax({url:"../api/usuarioR/delete/"+userid, type:"put",contentType: "application/json",
-    data: JSON.stringify(data1)
-    , success: function(data){
+    data: JSON.stringify(data1),
+    headers:{'x_api_key':key},
+    success: function(data){
         let resultado = data['Estado'];
         if(resultado=="Exitoso"){
           const Toast = Swal.mixin({

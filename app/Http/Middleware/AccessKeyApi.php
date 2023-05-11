@@ -5,9 +5,8 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
-use App\Models\ModelHasRoles;
 
-class AdminMiddleware
+class AccessKeyApi
 {
     /**
      * Handle an incoming request.
@@ -16,14 +15,12 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $rol_actual = ModelHasRoles::where('model_id', auth()->user()->id)->join('users', 'users.id' , '=','model_has_roles.model_id')->join('roles', 'roles.id' , '=','model_has_roles.role_id')->select('roles.name')->get();
-        if (auth()->check() && $rol_actual[0]['name'] == "SuperAdministrador"){
+        $apikey = $request->headers->get('x_api_key');
+        if ($apikey !=env('X_API_KEY')){
+            return response()->json(['Mensaje'=>"No Autorizado"],401);
+        }else{
             return $next($request);
 
-        }else{
-            abort(403, 'ACCESO NO AUTORIZADO. ');
         }
-
-
     }
 }

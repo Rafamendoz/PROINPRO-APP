@@ -48,10 +48,7 @@
             <label class="form-label" for="password">Password</label>
             <input type="password" class="form-control" placeholder="Password" id="password" name="password" required>
           </div>
-          <div class="mb-3">
-            <label class="form-label " for="intentos">Intentos</label>
-            <input type="number" class="form-control" id="intentos" name="intentos" required>
-          </div>
+      
         
           <div class="mb-3">
             <label class="form-label " for="inputIntentos">Estado:</label>
@@ -105,14 +102,18 @@
     let password =$("#password").val();
     let rol =$("#rol").val();
     let estado =$("#estado").val();
-    console.log(estado);
 
     
+    let data1 =     {"name":name, "lastname":lastname, "user":user, "email":email, "password":password, "rol":rol, "estado":estado}
+    const apikey = "{{env('X_API_KEY')}}";
 
-
-    $.post("../api/usuarioR/add",
-    {"name":name, "lastname":lastname, "user":user, "email":email, "password":password, "rol":rol, "estado":estado}
-    , function(data){
+    $.ajax({
+      url:"../api/usuarioR/add",       
+      method:"post",
+      data: JSON.stringify(data1),
+      contentType: "application/json",
+      headers:{'X-Api-Key':'djfe3jrb3jvir93ehcnejknx#$^$U*)$2y$10$e8EZmZvqASfZx4UYSnhfuuVSZ/IbbKu8YqNKuMAQC/5NEPJqP.DC.'},
+      success: function(data){
         let resultado = data['Estado'];
         if(resultado=="Exitoso"){
           const Toast = Swal.mixin({
@@ -160,13 +161,10 @@
 
             
 
-        }
+        }}
      
 
-    }
-    
-    
-    );
+    });
   }
 
 

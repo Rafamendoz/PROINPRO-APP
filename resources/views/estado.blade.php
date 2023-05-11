@@ -74,79 +74,9 @@
 
 </div>
 
-<script>
-
-function Send(){
-    let valor_estado = $("#valor_estado").val();
-  
-    $.post("{{route('registrarEstado')}}",
-    {"valor_estado":valor_estado}
-    , function(data){
-        let resultado = data['Estado'];
-        if(resultado=="Exitoso"){
-          const Toast = Swal.mixin({
-              toast: true,
-              position: 'top-end',
-              showConfirmButton: false,
-              timer: 3000,
-              timerProgressBar: true,
-              didOpen: (toast) => {
-                toast.addEventListener('mouseenter', Swal.stopTimer)
-                toast.addEventListener('mouseleave', Swal.resumeTimer)
-                
-              },
-              willClose: () => {
-                location.reload();
-              }
-              
-            })
-
-            Toast.fire({
-              icon: 'success',
-              title: data['Estado']+'!'+' '+data['Descripcion']
-            })
-
-            $("#btnRegistrar").prop('hidden', true);
-
-       
+<script src="{{asset('js/enviarEstado.js')}}"></script>
 
 
-
-        }else{  
-          const Toast = Swal.mixin({
-              toast: true,
-              position: 'top-end',
-              showConfirmButton: false,
-              timer: 3000,
-              timerProgressBar: true,
-              didOpen: (toast) => {
-                toast.addEventListener('mouseenter', Swal.stopTimer)
-                toast.addEventListener('mouseleave', Swal.resumeTimer)
-              }
-            })
-
-            Toast.fire({
-              icon: 'error',
-              title: data['Estado']+'!'+' '+data['Descripcion']
-            })
-           
-
-            
-
-        }
-     
-
-    }
-    
-    
-    );
-  }
-
- 
-
-
-
-</script>
 
 
 @endsection

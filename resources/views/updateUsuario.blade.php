@@ -117,11 +117,12 @@
 
     }
    
-
+    let key = "{{env('x_api_key')}}" ;
 
     $.ajax({url:"../../api/usuarioR/update/{{$usuario[0]->id}}", type:"put",contentType: "application/json",
-    data: JSON.stringify(data1)
-    , success: function(data){
+    data: JSON.stringify(data1),
+    headers:{'x_api_key':key},
+    success: function(data){
         let resultado = data['Estado'];
         if(resultado=="Exitoso"){
           const Toast = Swal.mixin({
