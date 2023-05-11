@@ -25,7 +25,7 @@
   </div>
   <div class="container ">
 
-   
+
 
 
 
@@ -35,21 +35,23 @@
   </div>
 
   <div class="card-body">
-    <div class="mx-2 row row-cols-4">
+    <div class="container">
+      <div class="row row-cols-md-4">
 
 
-      @foreach ($proyectos as $file)
+        @foreach ($proyectos as $file)
 
-      <a href="/admin/files/{{$file->id}}">
-        <div class="card-body btn btn-outline-primary m-2">
-          <h5 class="card-title"><b>
-              <i class="fa-sharp fa-solid m-2 fa-circle-info fa-shake"></i>{{$file->nombre_proyecto}}</b></h5>
-          <p class="card-text">{{$file->descripcion}}</p>
-        </div>
-      </a>
+        <a href="/admin/files/{{$file->id}}">
+          <div class="card-body btn btn-outline-primary m-2">
+            <h5 class="card-title"><b>
+                <i class="fa-sharp fa-solid m-2 fa-circle-info fa-shake"></i>{{$file->nombre_proyecto}}</b></h5>
+            <p class="card-text">{{$file->descripcion}}</p>
+          </div>
+        </a>
 
 
-      @endforeach
+        @endforeach
+      </div>
     </div>
 
   </div>
