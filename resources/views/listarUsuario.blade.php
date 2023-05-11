@@ -57,7 +57,7 @@
 
                               <td>
                                 <button class="btn btn-danger btn-sm" type="button" onclick="Delete({{$user->id}})"><i class="fas fa-trash"></i></button>
-                                <a class="btn btn-primary btn-sm" href="usuario/update/{{$user->user}}"><i class="fas fa-edit"></i></a>
+                                <a class="btn btn-primary btn-sm" href="../usuario/update/{{$user->user}}"><i class="fas fa-edit"></i></a>
                               </td>
                           </tr>
                         @endforeach
