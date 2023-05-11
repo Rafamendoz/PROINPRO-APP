@@ -76,8 +76,8 @@ class UsuarioController extends Controller
     }
 
     public function getUsuarios(){
-        $usuarios = DB::table('users')->join('estado', 'users.estado','=','estado.id')
-        ->get();
+        $usuarios = User::join('estado', 'users.estado','=','estado.id')
+        ->select('users.id', 'users.name', 'users.lastname', 'users.email', 'users.intentos', 'users.user', 'estado.valor_estado', 'users.created_at', 'users.updated_at')->where('estado',1)->get();
         return view('listarUsuario', compact('usuarios'));
 
     }
@@ -90,12 +90,23 @@ class UsuarioController extends Controller
 
     }
 
-    public function asignarRol(){
-        $usuario = User::find(1);
-        $usuario->assignRole(1);
-        return response()->json(['Usuario'=>$usuario, 'Estado'=>'Exitoso', 'Descripcion'=>"Registro Encontrado"],200);
+    public function deleteUsuario(Request $request, $id){
+        $usuario = User::find($id);
+        $usuario->update(["estado"=>$request->estado]);
+        switch($request->estado){
+            case 1:
+                return response()->json(['Usuario'=>$usuario, 'Estado'=>'Exitoso', 'Descripcion'=>"Registro Activado"],200);
+
+                break;
+            case 2:
+                return response()->json(['Usuario'=>$usuario, 'Estado'=>'Exitoso', 'Descripcion'=>"Registro Desactivado"],200);
+                break;
+        }
 
     }
+
+    
+
 
     
 

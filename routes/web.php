@@ -44,6 +44,9 @@ Route::get("usuario/update/{id}",'App\Http\Controllers\UsuarioController@loadLis
 )->name("actualizarUsuario");
 
 
+
+
+
 Route::get("/createProyect","App\Http\Controllers\ProyectoController@loadList")->name('crearProyecto');
 
 Route::get("/profile", function (){

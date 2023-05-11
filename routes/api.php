@@ -35,7 +35,7 @@ Route::get('usuarioR/{user}', 'App\Http\Controllers\UsuarioController@getUsuario
 Route::get('usuariosR','App\Http\Controllers\UsuarioController@getUsuariosRest');
 Route::put('usuarioR/update/{id}','App\Http\Controllers\UsuarioController@putUsuario');
 
-Route::get('usuarioR/assing/role','App\Http\Controllers\UsuarioController@asignarRol');
+Route::put('usuarioR/delete/{id}','App\Http\Controllers\UsuarioController@deleteUsuario');
 
 //RUTAS PARA LA ENTIDAD ESTADO
 Route::get('/estadosR/', 'App\Http\Controllers\EstadoController@getEstadosRest');

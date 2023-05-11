@@ -56,8 +56,8 @@
                        
 
                               <td>
-                                <button class="btn btn-danger btn-sm" type="button"><i class="fas fa-trash"></i></button>
-                                <a class="btn btn-primary btn-sm" href="usuario/update/{{$user->user}}"><i class="fas fa-edit"></i></button>
+                                <button class="btn btn-danger btn-sm" type="button" onclick="Delete({{$user->id}})"><i class="fas fa-trash"></i></button>
+                                <a class="btn btn-primary btn-sm" href="usuario/update/{{$user->user}}"><i class="fas fa-edit"></i></a>
                               </td>
                           </tr>
                         @endforeach
@@ -72,6 +72,87 @@
 
 
 </div>
+
+
+<script>
+ function Delete(userid){
+    
+    let data1={};
+
+    data1 = {"estado":2};
+    console.log(data1);
+ 
+   
+
+
+    $.ajax({url:"../api/usuarioR/delete/"+userid, type:"put",contentType: "application/json",
+    data: JSON.stringify(data1)
+    , success: function(data){
+        let resultado = data['Estado'];
+        if(resultado=="Exitoso"){
+          const Toast = Swal.mixin({
+              toast: true,
+              position: 'top-end',
+              showConfirmButton: false,
+              timer: 3000,
+              timerProgressBar: true,
+              didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+              },
+              willClose: () => {
+                location.reload();
+              }
+            })
+
+            Toast.fire({
+              icon: 'success',
+              title: data['Estado']+'!'+' '+data['Descripcion']
+            })
+
+          
+
+
+
+        }else{  
+          const Toast = Swal.mixin({
+              toast: true,
+              position: 'top-end',
+              showConfirmButton: false,
+              timer: 3000,
+              timerProgressBar: true,
+              didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+              },
+              willClose: () => {
+                location.reload();
+              }
+            })
+
+            Toast.fire({
+              icon: 'error',
+              title: data['Estado']+'!'+' '+data['Descripcion']
+            })
+           
+
+            
+
+        }
+     
+
+    }
+    
+    
+    });
+  }
+
+  
+
+
+
+</script>
+
 
 
 
