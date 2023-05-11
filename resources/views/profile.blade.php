@@ -31,17 +31,17 @@
                 id="images">
 
             </div>
-            <div class="col-md-4  mt-5">
+            <div class="col-md-6  mt-5">
               <div class="card-body text-center">
-                <h1 class="card-title text-info mb-4"><strong>Informacion</strong></h1>
-                <h3 class="card-text text-info text-justify"><strong>Nombre: </strong>
-                  {{auth()->user()->name}}</h3><br>
+                <h2 class="card-title text-info mb-4"><strong>Informacion</strong></h2>
+                <h5 class="card-text text-info text-justify"><strong>Nombre: </strong>
+                  {{auth()->user()->name}}</h5><br>
 
-                <h3 class="card-text text-info text-justify"><strong>Apellido: </strong>
-                  {{auth()->user()->lastname}}</h3><br>
+                <h5 class="card-text text-info text-justify"><strong>Apellido: </strong>
+                  {{auth()->user()->lastname}}</h5><br>
 
-                <h3 class="card-text text-info text-justify"><strong>Rol:
-                </strong>  {{$rol_actual[0]['name']}}</h3>
+                <h5 class="card-text text-info text-justify"><strong>Rol:
+                  </strong> {{$rol_actual[0]['name']}}</h5>
 
 
               </div>
