@@ -24,6 +24,7 @@ Route::get("/login", function (){
     return view('index');
 })->name('login');
 
+
 Route::post('validate', 'App\Http\Controllers\LoginController@login')->name('validate');
 
 
