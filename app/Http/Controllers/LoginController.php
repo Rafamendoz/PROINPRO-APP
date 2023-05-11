@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -14,16 +15,22 @@ class LoginController extends Controller
         ];
 
         $remember = ($request->has('remember')? true : false);
-        
-        if(Auth::attempt($credenciales, $remember )){
-
-            return redirect()->intended('proyectos');
-
-
-        }else{
+        $prevalidate = User::where('user', $request->user)->where('estado',1)->get();
+        if(sizeof($prevalidate)==0 || empty($prevalidate) || is_null($prevalidate)){
             return redirect('login');
-        }
+        }else{
+                if(Auth::attempt($credenciales, $remember )){
 
+                    return redirect()->intended('proyectos');
+        
+        
+                }else{
+                    return redirect('login');
+                }
+        
+
+        }
+        
 
     }
 

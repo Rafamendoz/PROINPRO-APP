@@ -64,7 +64,9 @@ Route::get('proyectos/', 'App\Http\Controllers\ProyectoController@getProyectos')
 
 
 Route::get('/usuarioR/', 'App\Http\Controllers\UsuarioController@getUsuariosRest');
-Route::get('usuarios/', 'App\Http\Controllers\UsuarioController@getUsuarios')->name('getUsuario');
+Route::get('usuarios/activos', 'App\Http\Controllers\UsuarioController@getUsuariosActivos')->name('getUsuariosActivos');
+Route::get('usuarios/inactivos', 'App\Http\Controllers\UsuarioController@getUsuariosInaActivos')->name('getUsuariosInactivos');
+
 Route::get('/download/{id}/{filename}', 'App\Http\Controllers\FileController@download');
 Route::get('/delete/{id}/{filename}', 'App\Http\Controllers\FileController@destroy');
 

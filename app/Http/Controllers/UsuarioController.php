@@ -75,10 +75,17 @@ class UsuarioController extends Controller
 
     }
 
-    public function getUsuarios(){
+    public function getUsuariosActivos(){
         $usuarios = User::join('estado', 'users.estado','=','estado.id')
         ->select('users.id', 'users.name', 'users.lastname', 'users.email', 'users.intentos', 'users.user', 'estado.valor_estado', 'users.created_at', 'users.updated_at')->where('estado',1)->get();
         return view('listarUsuario', compact('usuarios'));
+
+    }
+
+    public function getUsuariosInaActivos(){
+        $usuarios = User::join('estado', 'users.estado','=','estado.id')
+        ->select('users.id', 'users.name', 'users.lastname', 'users.email', 'users.intentos', 'users.user', 'estado.valor_estado', 'users.created_at', 'users.updated_at')->where('estado',2)->get();
+        return view('listarUsuarioInactivos', compact('usuarios'));
 
     }
 

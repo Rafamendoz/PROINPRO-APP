@@ -14,7 +14,7 @@
 <div class="card shadow mb-4">
   <div class="card-header py-3">
     <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-      <h5 class=" font-weight-bold text-info">Listado de Usuarios Activos</h5>
+      <h5 class=" font-weight-bold text-info">Listado de Usuarios Inactivos</h5>
 
     </div>
 
@@ -56,8 +56,7 @@
                        
 
                               <td>
-                                <button class="btn btn-danger btn-sm" type="button" onclick="Delete({{$user->id}})"><i class="fas fa-trash"></i></button>
-                                <a class="btn btn-primary btn-sm" href="usuario/update/{{$user->user}}"><i class="fas fa-edit"></i></a>
+                                <button class="btn btn-success btn-sm" type="button" onclick="Delete({{$user->id}})"><i class="fas fa-eye"></i></button>
                               </td>
                           </tr>
                         @endforeach
@@ -79,7 +78,7 @@
     
     let data1={};
 
-    data1 = {"estado":2};
+    data1 = {"estado":1};
     console.log(data1);
  
    

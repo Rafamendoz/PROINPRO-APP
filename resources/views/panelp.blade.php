@@ -91,7 +91,9 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Gestion de Usuarios:</h6>
             <a class="collapse-item" href="{{route('insertarUsuario')}}">Crear Usuarios</a>
-            <a class="collapse-item" href="{{route('getUsuario')}}">Ver Usuarios</a>
+            <a class="collapse-item" href="{{route('getUsuariosActivos')}}">Ver Usuarios Activos</a>
+            <a class="collapse-item" href="{{route('getUsuariosInactivos')}}">Ver Usuarios Inactivos</a>
+
           </div>
         </div>
       </li>
