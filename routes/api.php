@@ -33,7 +33,7 @@ Route::delete('/proyectoR/delete', 'App\Http\Controllers\ProyectoController@dele
 Route::post('usuarioR/add', 'App\Http\Controllers\UsuarioController@setUsuario')->name('registrarUsuario');
 Route::get('usuarioR/{user}', 'App\Http\Controllers\UsuarioController@getUsuarioRestByUser');
 Route::get('usuariosR','App\Http\Controllers\UsuarioController@getUsuariosRest');
-Route::put('usuariosR/update/{user}','App\Http\Controllers\UsuarioController@putUsuario');
+Route::put('usuarioR/update/{id}','App\Http\Controllers\UsuarioController@putUsuario');
 
 Route::get('usuarioR/assing/role','App\Http\Controllers\UsuarioController@asignarRol');
 

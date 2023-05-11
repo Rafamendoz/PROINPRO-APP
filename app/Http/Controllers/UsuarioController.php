@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use Illuminate\Support\Facades\DB;
+use App\Models\ModelHasRoles;
+
 
 
 class UsuarioController extends Controller
@@ -39,7 +41,7 @@ class UsuarioController extends Controller
         'estado'=>$request->estado,
         'intentos'=>$request->intentos
 
-        ])->assignRole($request->rol);;
+        ])->assignRole($request->rol);
 
      
 
@@ -47,14 +49,20 @@ class UsuarioController extends Controller
 
     }
 
-    public function putUsuario(Request $request, $user){
-        $usuario= User::where('user', $user)->update(['name'=>$request->name,
+    public function putUsuario(Request $request, $id){
+        
+        $usuario= User::find($id);
+        $usuario->update(['name'=>$request->name,
         'lastname'=>$request->lastname,
         'user'=>$request->user,
         'email'=>$request->email,
+        'estado'=>$request->estado,
         'password'=>Hash::make($request->password),
         ]);
-        return response()->json(['Usuario'=>$usuario, 'Estado'=>'Exitoso', 'Descripcion'=>"Registro Modificado"],200);
+
+        $model = ModelHasRoles::where('model_id',$id)->update(['role_id'=>$request->rol]);
+       
+        return response()->json(['Usuario'=>$usuario, 'Rol'=>$model ,'Estado'=>'Exitoso', 'Descripcion'=>'Registro Modificado'],200);
 
 
     }
