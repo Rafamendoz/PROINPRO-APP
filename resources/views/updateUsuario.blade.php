@@ -50,11 +50,7 @@
             <label class="form-label" for="password">Password</label>
             <input type="password" class="form-control" placeholder="Password" id="password" name="password" required>
           </div>
-          <div class="mb-3">
-            <label class="form-label " for="intentos">Intentos</label>
-            <input type="number" class="form-control" id="intentos" name="intentos" value="{{$usuario[0]->intentos}}" required>
-          </div>
-        
+         
           <div class="mb-3">
             <label class="form-label " for="inputIntentos">Estado:</label>
             <select class="form-control form-control-sm"  id="estado">
@@ -104,16 +100,15 @@
     let user =$("#user").val();
     let email =$("#email").val();
     let password =$("#password").val();
-    let intentos =$("#intentos").val();
     let rol =$("#rol").val();
     let estado =$("#estado").val();
     let id = {{$usuario[0]->id}};
     let data1={};
     if(password==""){
-      data1 = {"name":name, "id":id, "intentos":intentos,"lastname":lastname, "user":user, "email":email, "rol":rol, "estado":estado};
+      data1 = {"name":name, "id":id,"lastname":lastname, "user":user, "email":email, "rol":rol, "estado":estado};
     console.log(data1);
     }else{
-       data1 = {"name":name,  "id":id,"intentos":intentos,"lastname":lastname, "user":user, "email":email, "password":password, "rol":rol, "estado":estado};
+       data1 = {"name":name,  "id":id,"lastname":lastname, "user":user, "email":email, "password":password, "rol":rol, "estado":estado};
 
     }
    
@@ -129,7 +124,7 @@
               toast: true,
               position: 'top-end',
               showConfirmButton: false,
-              timer: 3000,
+              timer: 1300,
               timerProgressBar: true,
               didOpen: (toast) => {
                 toast.addEventListener('mouseenter', Swal.stopTimer)
@@ -154,7 +149,7 @@
               toast: true,
               position: 'top-end',
               showConfirmButton: false,
-              timer: 3000,
+              timer: 1300,
               timerProgressBar: true,
               didOpen: (toast) => {
                 toast.addEventListener('mouseenter', Swal.stopTimer)
