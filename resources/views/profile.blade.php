@@ -34,17 +34,14 @@
             <div class="col-md-4  mt-5">
               <div class="card-body text-center">
                 <h1 class="card-title text-info mb-4"><strong>Informacion</strong></h1>
-                <h3 class="card-text text-info text-justify"><strong>Name: </strong>
+                <h3 class="card-text text-info text-justify"><strong>Nombre: </strong>
                   {{auth()->user()->name}}</h3><br>
 
                 <h3 class="card-text text-info text-justify"><strong>Apellido: </strong>
                   {{auth()->user()->lastname}}</h3><br>
 
                 <h3 class="card-text text-info text-justify"><strong>Rol:
-                  @foreach($rol_actual as $rol)
-                    {{$rol->name}}
-                  @endforeach
-                </strong></h3>
+                </strong>  {{$rol_actual[0]['name']}}</h3>
 
 
               </div>
